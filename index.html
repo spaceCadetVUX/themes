@@ -1,614 +1,624 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Flevie — Premium Fashion Store. Discover the ultimate sale on new collections for men and women. Shop luxury brands at flevie.com."
-    />
-    <title>Flevie — Premium Fashion Store</title>
 
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Flevie — Premium Fashion Store. Discover the ultimate sale on new collections for men and women. Shop luxury brands at flevie.com." />
+  <title>Flevie — Premium Fashion Store</title>
 
-    <!-- Bootstrap 5 CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    />
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+    rel="stylesheet" />
 
-    <!-- Bootstrap Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
+  <!-- Bootstrap 5 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
-  <body>
-    <!-- ==========================================
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <!-- ==========================================
      NAVBAR
      ========================================== -->
-    <nav id="mainNav" class="navbar navbar-expand-lg">
-      <div class="container">
-        <!-- Logo -->
-        <a class="navbar-brand nav-logo" href="#hero">Flevie</a>
+      <nav id="mainNav" class="navbar navbar-expand-lg">
+        <div class="container">
+          <!-- Logo -->
+          <a class="navbar-brand nav-logo" href="#hero">Flevie</a>
 
-        <!-- Mobile toggler -->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navCollapse"
-          aria-controls="navCollapse"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+          <!-- Mobile toggler -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse"
+            aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <!-- Nav links + icons -->
-        <div class="collapse navbar-collapse" id="navCollapse">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="#hero">Home</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#deals">Shop</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#featured">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#products">Pages</a>
-            </li>
-          </ul>
+          <!-- Nav links + icons -->
+          <div class="collapse navbar-collapse" id="navCollapse">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="#hero">Home</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#deals">Shop</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#featured">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#products">Pages</a>
+              </li>
+            </ul>
 
-          <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
-            <button class="nav-icon-btn" aria-label="Search">
-              <i class="bi bi-search"></i>
-            </button>
-            <button class="nav-icon-btn" aria-label="Cart">
-              <i class="bi bi-bag" id="cartIcon"></i>
-            </button>
-            <button class="nav-signup-btn ms-2">Sign Up</button>
+            <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+              <button class="nav-icon-btn" aria-label="Search">
+                <i class="bi bi-search"></i>
+              </button>
+              <button class="nav-icon-btn" aria-label="Cart">
+                <i class="bi bi-bag" id="cartIcon"></i>
+              </button>
+              <button class="nav-signup-btn ms-2">Sign Up</button>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
 
-    <!-- ==========================================
+      <!-- ==========================================
      HERO SECTION
      ========================================== -->
-    <section id="hero">
-      <div class="hero-stage">
+      <section id="hero">
+        <div class="hero-stage">
 
-        <!-- Item 0: starts CENTER -->
-        <div class="hero-item pos-center" data-idx="0">
-          <img src="fashion/fas (32).jpg" alt="Hero 1" />
-          <div class="hero-item-overlay"></div>
-          <div class="hero-item-content">
-            <p class="hero-label">Au — New Collection</p>
-            <h1 class="hero-title">Ultimate<br />Sale</h1>
-            <p class="hero-subtitle">New Collection</p>
-            <a href="#deals" class="btn-dark-custom">Shop Now</a>
+          <!-- Item 0: starts CENTER -->
+          <div class="hero-item pos-center" data-idx="0">
+            <img src="fashion/fas (32).jpg" alt="Hero 1" />
+            <div class="hero-item-overlay"></div>
+            <div class="hero-item-content">
+              <p class="hero-label">Au — New Collection</p>
+              <h1 class="hero-title">Ultimate<br />Sale</h1>
+              <p class="hero-subtitle">New Collection</p>
+              <a href="#deals" class="btn-dark-custom">Shop Now</a>
+            </div>
           </div>
+
+          <!-- Item 1: starts RIGHT -->
+          <div class="hero-item pos-right" data-idx="1">
+            <img src="fashion/fas (33).jpg" alt="Hero 2" />
+            <div class="hero-item-overlay"></div>
+            <div class="hero-item-content">
+              <p class="hero-label">SS 2026 — Exclusive</p>
+              <h1 class="hero-title">New<br />Drops</h1>
+              <p class="hero-subtitle">Limited Edition</p>
+              <a href="#products" class="btn-dark-custom">Explore</a>
+            </div>
+          </div>
+
+          <!-- Item 2: starts HIDDEN RIGHT -->
+          <div class="hero-item pos-hidden-right" data-idx="2">
+            <img src="fashion/fas (45).jpg" alt="Hero 3" />
+            <div class="hero-item-overlay"></div>
+            <div class="hero-item-content">
+              <p class="hero-label">Women — Curated Picks</p>
+              <h1 class="hero-title">For<br />Her</h1>
+              <p class="hero-subtitle">Women's Collection</p>
+              <a href="#products" class="btn-dark-custom">Shop Women</a>
+            </div>
+          </div>
+
+          <!-- Item 3: starts HIDDEN LEFT -->
+          <div class="hero-item pos-hidden-left" data-idx="3">
+            <img src="fashion/fas (35).jpg" alt="Hero 4" />
+            <div class="hero-item-overlay"></div>
+            <div class="hero-item-content">
+              <p class="hero-label">Men — Calibre</p>
+              <h1 class="hero-title">For<br />Him</h1>
+              <p class="hero-subtitle">Men's Collection</p>
+              <a href="#products" class="btn-dark-custom">Shop Men</a>
+            </div>
+          </div>
+
+          <!-- Item 4: starts LEFT -->
+          <div class="hero-item pos-left" data-idx="4">
+            <img src="fashion/fas (50).jpg" alt="Hero 5" />
+            <div class="hero-item-overlay"></div>
+            <div class="hero-item-content">
+              <p class="hero-label">New Season — 2026</p>
+              <h1 class="hero-title">New<br />Season</h1>
+              <p class="hero-subtitle">Spring Collection</p>
+              <a href="#products" class="btn-dark-custom">Discover</a>
+            </div>
+          </div>
+
+        </div><!-- /.hero-stage -->
+
+        <!-- Dot indicators -->
+        <div class="hero-dots" id="heroDots">
+          <button class="hero-dot active" aria-label="Slide 1"></button>
+          <button class="hero-dot" aria-label="Slide 2"></button>
+          <button class="hero-dot" aria-label="Slide 3"></button>
+          <button class="hero-dot" aria-label="Slide 4"></button>
+          <button class="hero-dot" aria-label="Slide 5"></button>
         </div>
 
-        <!-- Item 1: starts RIGHT -->
-        <div class="hero-item pos-right" data-idx="1">
-          <img src="fashion/fas (33).jpg" alt="Hero 2" />
-          <div class="hero-item-overlay"></div>
-          <div class="hero-item-content">
-            <p class="hero-label">SS 2026 — Exclusive</p>
-            <h1 class="hero-title">New<br />Drops</h1>
-            <p class="hero-subtitle">Limited Edition</p>
-            <a href="#products" class="btn-dark-custom">Explore</a>
-          </div>
+        <!-- Prev / Next arrows -->
+        <div class="hero-nav-arrows">
+          <button class="hero-arrow" id="heroPrev" aria-label="Previous slide">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+          <button class="hero-arrow" id="heroNext" aria-label="Next slide">
+            <i class="bi bi-chevron-right"></i>
+          </button>
         </div>
+      </section>
 
-        <!-- Item 2: starts HIDDEN RIGHT -->
-        <div class="hero-item pos-hidden-right" data-idx="2">
-          <img src="fashion/fas (45).jpg" alt="Hero 3" />
-          <div class="hero-item-overlay"></div>
-          <div class="hero-item-content">
-            <p class="hero-label">Women — Curated Picks</p>
-            <h1 class="hero-title">For<br />Her</h1>
-            <p class="hero-subtitle">Women's Collection</p>
-            <a href="#products" class="btn-dark-custom">Shop Women</a>
-          </div>
-        </div>
-
-        <!-- Item 3: starts HIDDEN LEFT -->
-        <div class="hero-item pos-hidden-left" data-idx="3">
-          <img src="fashion/fas (35).jpg" alt="Hero 4" />
-          <div class="hero-item-overlay"></div>
-          <div class="hero-item-content">
-            <p class="hero-label">Men — Calibre</p>
-            <h1 class="hero-title">For<br />Him</h1>
-            <p class="hero-subtitle">Men's Collection</p>
-            <a href="#products" class="btn-dark-custom">Shop Men</a>
-          </div>
-        </div>
-
-        <!-- Item 4: starts LEFT -->
-        <div class="hero-item pos-left" data-idx="4">
-          <img src="fashion/fas (50).jpg" alt="Hero 5" />
-          <div class="hero-item-overlay"></div>
-          <div class="hero-item-content">
-            <p class="hero-label">New Season — 2026</p>
-            <h1 class="hero-title">New<br />Season</h1>
-            <p class="hero-subtitle">Spring Collection</p>
-            <a href="#products" class="btn-dark-custom">Discover</a>
-          </div>
-        </div>
-
-      </div><!-- /.hero-stage -->
-
-      <!-- Dot indicators -->
-      <div class="hero-dots" id="heroDots">
-        <button class="hero-dot active" aria-label="Slide 1"></button>
-        <button class="hero-dot" aria-label="Slide 2"></button>
-        <button class="hero-dot" aria-label="Slide 3"></button>
-        <button class="hero-dot" aria-label="Slide 4"></button>
-        <button class="hero-dot" aria-label="Slide 5"></button>
-      </div>
-
-      <!-- Prev / Next arrows -->
-      <div class="hero-nav-arrows">
-        <button class="hero-arrow" id="heroPrev" aria-label="Previous slide">
-          <i class="bi bi-chevron-left"></i>
-        </button>
-        <button class="hero-arrow" id="heroNext" aria-label="Next slide">
-          <i class="bi bi-chevron-right"></i>
-        </button>
-      </div>
-    </section>
-
-    <!-- ==========================================
+      <!-- ==========================================
      BRAND LOGOS BAR
      ========================================== -->
-    <section id="brands">
-      <div class="container">
-        <div class="brand-logos">
-          <span class="brand-name large">Chanel</span>
-          <span class="brand-name">Louis Vuitton</span>
-          <span class="brand-name large">Prada</span>
-          <span class="brand-name">Calvin Klein</span>
-          <span class="brand-name large">Denim</span>
+      <section id="brands">
+        <div class="container">
+          <div class="brand-logos">
+            <span class="brand-name large">Chanel</span>
+            <span class="brand-name">Louis Vuitton</span>
+            <span class="brand-name large">Prada</span>
+            <span class="brand-name">Calvin Klein</span>
+            <span class="brand-name large">Denim</span>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ==========================================
+      <!-- ==========================================
      DEALS OF THE MONTH
      ========================================== -->
-    <section id="deals" class="section-pad">
-      <div class="container">
-        <div class="row align-items-center g-5">
-          <!-- Text + Countdown -->
-          <div class="col-lg-5 fade-up">
-            <div class="deals-text">
-              <h2>Deals Of<br />The Month</h2>
-              <p>
-                Don't miss our exclusive monthly deals — curated selections from
-                the world's leading fashion houses at unbeatable prices. Limited
-                time, limited stock.
-              </p>
-              <div class="mt-4">
-                <a href="#products" class="btn-dark-custom">Shop Now</a>
-              </div>
-              <!-- Countdown -->
-              <div class="countdown-wrap">
-                <p class="countdown-label">Hurry, Before It's Too Late!</p>
-                <div class="countdown">
-                  <div class="countdown-unit">
-                    <span class="countdown-num" id="cd-days">02</span>
-                    <span class="countdown-text">Days</span>
-                  </div>
-                  <span class="countdown-sep">:</span>
-                  <div class="countdown-unit">
-                    <span class="countdown-num" id="cd-hours">06</span>
-                    <span class="countdown-text">Hours</span>
-                  </div>
-                  <span class="countdown-sep">:</span>
-                  <div class="countdown-unit">
-                    <span class="countdown-num" id="cd-mins">05</span>
-                    <span class="countdown-text">Mins</span>
-                  </div>
-                  <span class="countdown-sep">:</span>
-                  <div class="countdown-unit">
-                    <span class="countdown-num" id="cd-secs">30</span>
-                    <span class="countdown-text">Secs</span>
+      <section id="deals" class="section-pad">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <!-- Text + Countdown -->
+            <div class="col-lg-5 fade-up">
+              <div class="deals-text">
+                <h2>Deals Of<br />The Month</h2>
+                <p>
+                  Don't miss our exclusive monthly deals — curated selections from
+                  the world's leading fashion houses at unbeatable prices. Limited
+                  time, limited stock.
+                </p>
+                <div class="mt-4">
+                  <a href="#products" class="btn-dark-custom">Shop Now</a>
+                </div>
+                <!-- Countdown -->
+                <div class="countdown-wrap">
+                  <p class="countdown-label">Hurry, Before It's Too Late!</p>
+                  <div class="countdown">
+                    <div class="countdown-unit">
+                      <span class="countdown-num" id="cd-days">02</span>
+                      <span class="countdown-text">Days</span>
+                    </div>
+                    <span class="countdown-sep">:</span>
+                    <div class="countdown-unit">
+                      <span class="countdown-num" id="cd-hours">06</span>
+                      <span class="countdown-text">Hours</span>
+                    </div>
+                    <span class="countdown-sep">:</span>
+                    <div class="countdown-unit">
+                      <span class="countdown-num" id="cd-mins">05</span>
+                      <span class="countdown-text">Mins</span>
+                    </div>
+                    <span class="countdown-sep">:</span>
+                    <div class="countdown-unit">
+                      <span class="countdown-num" id="cd-secs">30</span>
+                      <span class="countdown-text">Secs</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Deals Slider -->
-          <div class="col-lg-7 fade-up">
-            <div class="deals-slider" id="dealsSlider">
+            <!-- Deals Slider -->
+            <div class="col-lg-7 fade-up">
+              <div class="deals-slider" id="dealsSlider">
 
-              <!-- Slide 1: 3-image collage -->
-              <div class="deals-slide active">
-                <div class="deals-slide-grid grid-3">
-                  <img src="fashion/fas (3).jpg"  alt="Deals 1a" class="ds-img ds-img-a" />
-                  <img src="fashion/fas (4).jpg"  alt="Deals 1b" class="ds-img ds-img-b" />
-                  <img src="fashion/fas (5).jpg"  alt="Deals 1c" class="ds-img ds-img-c" />
-                </div>
-              </div>
-
-              <!-- Slide 2: 3-image collage with badge -->
-              <div class="deals-slide">
-                <div class="deals-slide-grid grid-3">
-                  <img src="fashion/fas (17).jpg" alt="Deals 2a" class="ds-img ds-img-a" />
-                  <img src="fashion/fas (23).jpg" alt="Deals 2b" class="ds-img ds-img-b" />
-                  <div class="ds-img ds-img-c" style="position:relative;overflow:hidden;">
-                    <img src="fashion/fas (28).jpg" alt="Deals 2c" style="width:100%;height:100%;object-fit:cover;display:block;" />
-                    <div class="deals-badge"><span>50%</span>OFF</div>
+                <!-- Slide 1: 3-image collage -->
+                <div class="deals-slide active">
+                  <div class="deals-slide-grid grid-3">
+                    <img src="fashion/fas (3).jpg" alt="Deals 1a" class="ds-img ds-img-a" />
+                    <img src="fashion/fas (4).jpg" alt="Deals 1b" class="ds-img ds-img-b" />
+                    <img src="fashion/fas (5).jpg" alt="Deals 1c" class="ds-img ds-img-c" />
                   </div>
                 </div>
-              </div>
 
-              <!-- Slide 3: 4-image 2×2 grid -->
-              <div class="deals-slide">
-                <div class="deals-slide-grid grid-4">
-                  <img src="fashion/fas (30).jpg" alt="Deals 3a" class="ds-img" />
-                  <img src="fashion/fas (33).jpg" alt="Deals 3b" class="ds-img" />
-                  <img src="fashion/fas (45).jpg" alt="Deals 3c" class="ds-img" />
-                  <img src="fashion/fas (50).jpg" alt="Deals 3d" class="ds-img" />
+                <!-- Slide 2: 3-image collage with badge -->
+                <div class="deals-slide">
+                  <div class="deals-slide-grid grid-3">
+                    <img src="fashion/fas (17).jpg" alt="Deals 2a" class="ds-img ds-img-a" />
+                    <img src="fashion/fas (23).jpg" alt="Deals 2b" class="ds-img ds-img-b" />
+                    <div class="ds-img ds-img-c" style="position:relative;overflow:hidden;">
+                      <img src="fashion/fas (28).jpg" alt="Deals 2c"
+                        style="width:100%;height:100%;object-fit:cover;display:block;" />
+                      <div class="deals-badge"><span>50%</span>OFF</div>
+                    </div>
+                  </div>
                 </div>
-              </div>
 
-              <!-- Slide 4: 4-image 2×2 grid -->
-              <div class="deals-slide">
-                <div class="deals-slide-grid grid-4">
-                  <img src="fashion/fas (56).jpg" alt="Deals 4a" class="ds-img" />
-                  <img src="fashion/fas (57).jpg" alt="Deals 4b" class="ds-img" />
-                  <img src="fashion/fas (58).jpg" alt="Deals 4c" class="ds-img" />
-                  <img src="fashion/fas (59).jpg" alt="Deals 4d" class="ds-img" />
+                <!-- Slide 3: 4-image 2×2 grid -->
+                <div class="deals-slide">
+                  <div class="deals-slide-grid grid-4">
+                    <img src="fashion/fas (30).jpg" alt="Deals 3a" class="ds-img" />
+                    <img src="fashion/fas (33).jpg" alt="Deals 3b" class="ds-img" />
+                    <img src="fashion/fas (45).jpg" alt="Deals 3c" class="ds-img" />
+                    <img src="fashion/fas (50).jpg" alt="Deals 3d" class="ds-img" />
+                  </div>
                 </div>
-              </div>
 
-            </div>
-            <div class="carousel-dots mt-3" id="dealsDots">
-              <div class="carousel-dot active"></div>
-              <div class="carousel-dot"></div>
-              <div class="carousel-dot"></div>
-              <div class="carousel-dot"></div>
+                <!-- Slide 4: 4-image 2×2 grid -->
+                <div class="deals-slide">
+                  <div class="deals-slide-grid grid-4">
+                    <img src="fashion/fas (56).jpg" alt="Deals 4a" class="ds-img" />
+                    <img src="fashion/fas (57).jpg" alt="Deals 4b" class="ds-img" />
+                    <img src="fashion/fas (58).jpg" alt="Deals 4c" class="ds-img" />
+                    <img src="fashion/fas (59).jpg" alt="Deals 4d" class="ds-img" />
+                  </div>
+                </div>
+
+              </div>
+              <div class="carousel-dots mt-3" id="dealsDots">
+                <div class="carousel-dot active"></div>
+                <div class="carousel-dot"></div>
+                <div class="carousel-dot"></div>
+                <div class="carousel-dot"></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ==========================================
+      <!-- ==========================================
      FEATURED: CALIBRE
      ========================================== -->
-    <section id="featured">
-      <!-- CALIBRE block -->
-      <div class="calibre-wrap">
-        <!-- Left: image + button -->
-        <div class="calibre-left">
-          <img src="fashion/fas (6).jpg" alt="Calibre featured left" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;" />
-          <div class="calibre-left-content fade-up">
-            <p
-              class="font-xs letter-wide text-muted mb-3"
-              style="text-transform: uppercase"
-            >
-              Featured Brand
-            </p>
-            <a href="#products" class="btn-outline-custom">Explore Now</a>
-          </div>
+      <section id="featured">
+        <!-- ── CALIBRE BLOG GRID ── -->
+        <div class="calibre-header fade-up">
+          <p class="calibre-eyebrow">Featured Brand</p>
+          <h2 class="calibre-title">Calibre</h2>
+          <p class="calibre-subtitle">Men's Contemporary Collection — 2026</p>
         </div>
 
-        <!-- Right: brand name overlay + model image -->
-        <div class="calibre-right">
-          <img src="fashion/fas (2).jpg" alt="Calibre right model" class="calibre-right-img" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;" />
-          <div class="calibre-right-content fade-up">
-            <span class="calibre-name">Calibre</span>
-            <div style="position: relative; z-index: 2">
-              <p
-                class="font-xs letter-wide text-muted mb-3"
-                style="text-transform: uppercase"
-              >
-                Men's Collection
-              </p>
-              <a href="#products" class="btn-dark-custom">Shop Now</a>
+        <div class="calibre-blog-grid">
+
+          <!-- Blog 1 · HERO — tall left, spans 2 rows -->
+          <article class="cblog cblog-1 fade-up">
+            <div class="cblog-img-wrap">
+              <img src="fashion/fas (6).jpg" alt="Calibre — The Modern Gentleman" />
+              <div class="cblog-overlay"></div>
             </div>
-          </div>
-        </div>
-      </div>
+            <div class="cblog-content">
+              <h3 class="cblog-heading">The Modern<br>Gentleman</h3>
+              <p class="cblog-desc">Refined silhouettes crafted for the man who commands every room he enters.</p>
+              <a href="#products" class="cblog-cta btn-white-custom">Read Story</a>
+            </div>
+          </article>
 
-      <!-- TARANTINO block -->
-      <div class="tarantino-wrap">
-        <!-- Left photo cell -->
-        <div class="tarantino-cell" style="min-height: 340px;position:relative;overflow:hidden;">
-          <img src="fashion/fas (11).jpg" alt="Tarantino left" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;" />
-          <span class="tarantino-overlay-text tarantino-text-left"
-            >20<br />28</span
-          >
-        </div>
+          <!-- Blog 2 · Landscape top-right -->
+          <article class="cblog cblog-2 fade-up">
+            <div class="cblog-img-wrap">
+              <img src="fashion/fas (21).jpg" alt="Calibre — Layer Up" />
+              <div class="cblog-overlay"></div>
+            </div>
+            <div class="cblog-content cblog-content--bottom">
+              <h3 class="cblog-heading">Layer Up</h3>
+              <a href="#products" class="cblog-cta btn-white-custom">Explore</a>
+            </div>
+          </article>
 
-        <!-- Middle text cell -->
-        <div class="tarantino-middle fade-up">
-          <p
-            class="font-xs letter-wide text-muted mb-1"
-            style="text-transform: uppercase"
-          >
-            Fashion Brand
-          </p>
-          <h2
-            style="
-              font-size: clamp(1.6rem, 4vw, 3rem);
-              font-weight: 900;
-              line-height: 1;
-              letter-spacing: 0.05em;
-              margin-bottom: 1rem;
-            "
-          >
-            Taran<br />tino
-          </h2>
-          <p
-            style="
-              font-size: 0.85rem;
-              color: var(--color-text-muted);
-              max-width: 260px;
-              margin-bottom: 1.5rem;
-            "
-          >
-            Bold. Raw. Unapologetic. Tarantino brings cinema couture to the
-            streets.
-          </p>
-          <a href="#products" class="btn-dark-custom">Explore</a>
-        </div>
+          <!-- Blog 3 · Square top-right-2 -->
+          <article class="cblog cblog-3 fade-up">
+            <div class="cblog-img-wrap">
+              <img src="fashion/fas (54).jpg" alt="Calibre — Sharp Tailoring" />
+              <div class="cblog-overlay"></div>
+            </div>
+            <div class="cblog-content cblog-content--center">
+              <h3 class="cblog-heading">Sharp<br>Cuts</h3>
+              <a href="#products" class="cblog-cta btn-outline-custom cblog-cta--light">Shop Now</a>
+            </div>
+          </article>
 
-        <!-- Right cell: two stacked photos -->
-        <div class="tarantino-right-wrap">
-          <div class="tarantino-right-top" style="position:relative;overflow:hidden;">
-            <img src="fashion/fas (12).jpg" alt="Tarantino right top" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;" />
-            <span
-              class="tarantino-overlay-text tarantino-text-right"
-              style="
-                bottom: auto;
-                right: 1rem;
-                top: 1rem;
-                color: var(--color-black);
-                text-shadow: none;
-                font-size: clamp(1.5rem, 2.5vw, 2.5rem);
-              "
-            >
-              New
-            </span>
-          </div>
-          <div class="tarantino-right-bottom" style="position:relative;overflow:hidden;">
-            <img src="fashion/fas (13).jpg" alt="Tarantino right bottom" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;" />
-          </div>
-        </div>
-      </div>
-    </section>
+          <!-- Blog 4 · Textured editorial card (no image bg) -->
+          <article class="cblog cblog-4 cblog--editorial fade-up">
+            <div class="cblog-editorial-inner">
+              <span class="cblog-tag cblog-tag--dark">SS 2026</span>
+              <p class="cblog-editorial-quote">"Dress well.<br>Live bold."</p>
+              <h3 class="cblog-heading cblog-heading--dark">The Calibre<br>Manifesto</h3>
+              <p class="cblog-desc cblog-desc--dark">Six decades of precision. One season of reinvention.</p>
+              <a href="#products" class="cblog-cta btn-dark-custom">Discover More</a>
+            </div>
+          </article>
 
-    <!-- ==========================================
+          <!-- Blog 5 · Portrait mid-right -->
+          <article class="cblog cblog-5 fade-up">
+            <div class="cblog-img-wrap">
+              <img src="fashion/fas (39).jpg" alt="Calibre — Street Refined" />
+              <div class="cblog-overlay"></div>
+            </div>
+            <div class="cblog-content cblog-content--bottom">
+              <h3 class="cblog-heading">Street<br>Refined</h3>
+              <a href="#products" class="cblog-cta btn-white-custom">View Look</a>
+            </div>
+          </article>
+
+          <!-- Blog 6 · Wide bottom-left -->
+          <article class="cblog cblog-6 fade-up">
+            <div class="cblog-img-wrap">
+              <img src="fashion/fas (27).jpg" alt="Calibre — Cold Weather Edit" />
+              <div class="cblog-overlay"></div>
+            </div>
+            <div class="cblog-content">
+              <h3 class="cblog-heading">Cold Weather<br>Edit</h3>
+              <p class="cblog-desc">From puffer jackets to overcoats — stay warm in undeniable style.</p>
+              <a href="#products" class="cblog-cta btn-white-custom">Shop Outerwear</a>
+            </div>
+          </article>
+
+          <!-- Blog 7 · Wide bottom-right -->
+          <article class="cblog cblog-7 fade-up">
+            <div class="cblog-img-wrap">
+              <img src="fashion/fas (51).jpg" alt="Calibre — Calibre Man" />
+              <div class="cblog-overlay"></div>
+            </div>
+            <div class="cblog-content cblog-content--bottom-right">
+              <h3 class="cblog-heading">Calibre<br>Man</h3>
+              <a href="#products" class="cblog-cta btn-white-custom">See Collection</a>
+            </div>
+          </article>
+
+        </div><!-- /.calibre-blog-grid -->
+
+        <!-- TARANTINO block -->
+
+      </section>
+
+      <!-- ==========================================
      PRODUCT GRIDS
      ========================================== -->
-    <section id="products" class="section-pad">
-      <div class="container">
-        <!-- ── For Women ── -->
-        <div class="products-header fade-up">
-          <h2 class="products-title">For Women</h2>
-          <div class="products-nav">
-            <a href="#" class="view-all-link">Get All</a>
-            <button
-              class="products-arrow"
-              data-prev
-              aria-label="Previous"
-              id="womenPrev"
-            >
-              <i class="bi bi-chevron-left"></i>
-            </button>
-            <button
-              class="products-arrow"
-              data-next
-              aria-label="Next"
-              id="womenNext"
-            >
-              <i class="bi bi-chevron-right"></i>
-            </button>
+      <section id="products" class="section-pad">
+        <div class="container">
+          <!-- ── For Women ── -->
+          <div class="products-header fade-up">
+            <h2 class="products-title">For Women</h2>
+            <div class="products-nav">
+              <a href="#" class="view-all-link">Get All</a>
+              <button class="products-arrow" data-prev aria-label="Previous" id="womenPrev">
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <button class="products-arrow" data-next aria-label="Next" id="womenNext">
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="row g-3" id="womenSliderWrap" data-slider>
+            <!-- Woman 1 -->
+            <div class="col-6 col-md-4 col-lg-3 product-card fade-up">
+              <div class="product-img-wrap">
+                <img src="fashion/fas (17).jpg" alt="Women's Coat"
+                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
+                <div class="product-quick-add">Quick Add</div>
+                <span class="product-tag new">New</span>
+              </div>
+              <p class="product-name">Women's Coat</p>
+              <p class="product-price">3,999,000 VND</p>
+            </div>
+            <!-- Woman 2 -->
+            <div class="col-6 col-md-4 col-lg-3 product-card fade-up">
+              <div class="product-img-wrap">
+                <img src="fashion/fas (25).jpg" alt="Slim Blazer"
+                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
+                <div class="product-quick-add">Quick Add</div>
+              </div>
+              <p class="product-name">Slim Blazer</p>
+              <p class="product-price">2,599,000 VND</p>
+            </div>
+            <!-- Woman 3 -->
+            <div class="col-6 col-md-4 col-lg-3 product-card fade-up">
+              <div class="product-img-wrap">
+                <img src="fashion/fas (28).jpg" alt="Casual Knit Set"
+                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
+                <div class="product-quick-add">Quick Add</div>
+                <span class="product-tag sale">Sale</span>
+              </div>
+              <p class="product-name">Casual Knit Set</p>
+              <p class="product-price">
+                1,899,000 VND
+                <span class="old-price">2,500,000 VND</span>
+              </p>
+            </div>
+            <!-- Woman 4 -->
+            <div class="col-6 col-md-4 col-lg-3 product-card fade-up">
+              <div class="product-img-wrap">
+                <img src="fashion/fas (30).jpg" alt="Wide-Leg Trousers"
+                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
+                <div class="product-quick-add">Quick Add</div>
+              </div>
+              <p class="product-name">Wide-Leg Trousers</p>
+              <p class="product-price">1,499,000 VND</p>
+            </div>
+          </div>
+
+          <div class="products-divider"></div>
+
+          <!-- ── For Men ── -->
+          <div class="products-header fade-up">
+            <h2 class="products-title">For Men</h2>
+            <div class="products-nav">
+              <a href="#" class="view-all-link">Get All</a>
+              <button class="products-arrow" data-prev aria-label="Previous" id="menPrev">
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <button class="products-arrow" data-next aria-label="Next" id="menNext">
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="row g-3" id="menSliderWrap" data-slider>
+            <!-- Man 1 -->
+            <div class="col-6 col-md-4 col-lg-3 product-card fade-up">
+              <div class="product-img-wrap">
+                <img src="fashion/fas (56).jpg" alt="Leather Jacket"
+                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
+                <div class="product-quick-add">Quick Add</div>
+                <span class="product-tag new">New</span>
+              </div>
+              <p class="product-name">Leather Jacket</p>
+              <p class="product-price">5,200,000 VND</p>
+            </div>
+            <!-- Man 2 -->
+            <div class="col-6 col-md-4 col-lg-3 product-card fade-up">
+              <div class="product-img-wrap">
+                <img src="fashion/fas (26).jpg" alt="Fitted Turtleneck"
+                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
+                <div class="product-quick-add">Quick Add</div>
+              </div>
+              <p class="product-name">Fitted Turtleneck</p>
+              <p class="product-price">1,299,000 VND</p>
+            </div>
+            <!-- Man 3 -->
+            <div class="col-6 col-md-4 col-lg-3 product-card fade-up">
+              <div class="product-img-wrap">
+                <img src="fashion/fas (27).jpg" alt="Oversized Puffer"
+                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
+                <div class="product-quick-add">Quick Add</div>
+                <span class="product-tag sale">Sale</span>
+              </div>
+              <p class="product-name">Oversized Puffer</p>
+              <p class="product-price">
+                2,799,000 VND
+                <span class="old-price">3,500,000 VND</span>
+              </p>
+            </div>
+            <!-- Man 4 -->
+            <div class="col-6 col-md-4 col-lg-3 product-card fade-up">
+              <div class="product-img-wrap">
+                <img src="fashion/fas (39).jpg" alt="Slim Chino Pants"
+                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
+                <div class="product-quick-add">Quick Add</div>
+              </div>
+              <p class="product-name">Slim Chino Pants</p>
+              <p class="product-price">1,499,000 VND</p>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div class="row g-3" id="womenSliderWrap" data-slider>
-          <!-- Woman 1 -->
-          <div class="col-6 col-md-4 col-lg-3 product-card fade-up">
-            <div class="product-img-wrap">
-              <img src="fashion/fas (17).jpg" alt="Women's Coat" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
-              <div class="product-quick-add">Quick Add</div>
-              <span class="product-tag new">New</span>
-            </div>
-            <p class="product-name">Women's Coat</p>
-            <p class="product-price">3,999,000 VND</p>
-          </div>
-          <!-- Woman 2 -->
-          <div class="col-6 col-md-4 col-lg-3 product-card fade-up">
-            <div class="product-img-wrap">
-              <img src="fashion/fas (25).jpg" alt="Slim Blazer" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
-              <div class="product-quick-add">Quick Add</div>
-            </div>
-            <p class="product-name">Slim Blazer</p>
-            <p class="product-price">2,599,000 VND</p>
-          </div>
-          <!-- Woman 3 -->
-          <div class="col-6 col-md-4 col-lg-3 product-card fade-up">
-            <div class="product-img-wrap">
-              <img src="fashion/fas (28).jpg" alt="Casual Knit Set" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
-              <div class="product-quick-add">Quick Add</div>
-              <span class="product-tag sale">Sale</span>
-            </div>
-            <p class="product-name">Casual Knit Set</p>
-            <p class="product-price">
-              1,899,000 VND
-              <span class="old-price">2,500,000 VND</span>
-            </p>
-          </div>
-          <!-- Woman 4 -->
-          <div class="col-6 col-md-4 col-lg-3 product-card fade-up">
-            <div class="product-img-wrap">
-              <img src="fashion/fas (30).jpg" alt="Wide-Leg Trousers" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
-              <div class="product-quick-add">Quick Add</div>
-            </div>
-            <p class="product-name">Wide-Leg Trousers</p>
-            <p class="product-price">1,499,000 VND</p>
-          </div>
-        </div>
 
-        <div class="products-divider"></div>
 
-        <!-- ── For Men ── -->
-        <div class="products-header fade-up">
-          <h2 class="products-title">For Men</h2>
-          <div class="products-nav">
-            <a href="#" class="view-all-link">Get All</a>
-            <button
-              class="products-arrow"
-              data-prev
-              aria-label="Previous"
-              id="menPrev"
-            >
-              <i class="bi bi-chevron-left"></i>
-            </button>
-            <button
-              class="products-arrow"
-              data-next
-              aria-label="Next"
-              id="menNext"
-            >
-              <i class="bi bi-chevron-right"></i>
-            </button>
-          </div>
-        </div>
-
-        <div class="row g-3" id="menSliderWrap" data-slider>
-          <!-- Man 1 -->
-          <div class="col-6 col-md-4 col-lg-3 product-card fade-up">
-            <div class="product-img-wrap">
-              <img src="fashion/fas (56).jpg" alt="Leather Jacket" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
-              <div class="product-quick-add">Quick Add</div>
-              <span class="product-tag new">New</span>
-            </div>
-            <p class="product-name">Leather Jacket</p>
-            <p class="product-price">5,200,000 VND</p>
-          </div>
-          <!-- Man 2 -->
-          <div class="col-6 col-md-4 col-lg-3 product-card fade-up">
-            <div class="product-img-wrap">
-              <img src="fashion/fas (26).jpg" alt="Fitted Turtleneck" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
-              <div class="product-quick-add">Quick Add</div>
-            </div>
-            <p class="product-name">Fitted Turtleneck</p>
-            <p class="product-price">1,299,000 VND</p>
-          </div>
-          <!-- Man 3 -->
-          <div class="col-6 col-md-4 col-lg-3 product-card fade-up">
-            <div class="product-img-wrap">
-              <img src="fashion/fas (27).jpg" alt="Oversized Puffer" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
-              <div class="product-quick-add">Quick Add</div>
-              <span class="product-tag sale">Sale</span>
-            </div>
-            <p class="product-name">Oversized Puffer</p>
-            <p class="product-price">
-              2,799,000 VND
-              <span class="old-price">3,500,000 VND</span>
-            </p>
-          </div>
-          <!-- Man 4 -->
-          <div class="col-6 col-md-4 col-lg-3 product-card fade-up">
-            <div class="product-img-wrap">
-              <img src="fashion/fas (39).jpg" alt="Slim Chino Pants" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
-              <div class="product-quick-add">Quick Add</div>
-            </div>
-            <p class="product-name">Slim Chino Pants</p>
-            <p class="product-price">1,499,000 VND</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-     NEWSLETTER
-     ========================================== -->
-    <section id="newsletter">
-      <!-- Side decoration images -->
-      <div class="newsletter-side-img left">
-        <img src="fashion/fas (29).jpg" alt="Newsletter decoration left" style="width:100%;height:100%;object-fit:cover;display:block;" />
-      </div>
-      <div class="newsletter-side-img right">
-        <img src="fashion/fas (40).jpg" alt="Newsletter decoration right" style="width:100%;height:100%;object-fit:cover;display:block;" />
-      </div>
-
-      <div class="container">
-        <div class="newsletter-inner fade-up">
-          <p
-            class="font-xs letter-wide text-muted mb-3"
-            style="text-transform: uppercase"
-          >
-            Stay In Touch
-          </p>
-          <h2>Subscribe To Our Newsletter</h2>
-          <p>
-            Get the latest arrivals, exclusive offers, and style inspiration
-            delivered straight to your inbox. No spam, ever.
-          </p>
-          <form class="newsletter-form" id="newsletterForm" novalidate>
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              required
-              aria-label="Email address"
-              id="newsletterEmail"
-            />
-            <button type="submit" class="btn-dark-custom">Subscribe</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
+      <!-- ==========================================
      FOOTER
      ========================================== -->
-    <footer id="footer">
-      <div class="container">
-        <div class="footer-inner">
-          <!-- Logo -->
-          <span class="footer-logo">Flevie</span>
-          <!-- Nav -->
-          <nav class="footer-nav" aria-label="Footer navigation">
-            <a href="#hero">Home</a>
-            <a href="#deals">Shop</a>
-            <a href="#featured">About</a>
-            <a href="#products">Pages</a>
-          </nav>
-          <!-- Copy -->
-          <p class="footer-copy">&copy; 2026 Flevie. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
+      <footer id="footer">
+        <div class="footer-top">
+          <div class="container">
+            <div class="footer-grid">
 
-    <!-- ── Scroll to Top ── -->
-    <button id="scrollTop" aria-label="Scroll to top">
-      <i class="bi bi-arrow-up"></i>
-    </button>
+              <!-- Col 1: Brand -->
+              <div class="footer-brand-col">
+                <span class="footer-logo">Flevie</span>
+                <p class="footer-tagline">Premium fashion for the modern individual. Curated collections from the
+                  world's
+                  leading houses.</p>
+                <div class="footer-socials">
+                  <a href="#" class="footer-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="#" class="footer-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="#" class="footer-social-btn" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+                  <a href="#" class="footer-social-btn" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                </div>
+              </div>
 
-    <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+              <!-- Col 2: Shop -->
+              <div class="footer-col">
+                <h4 class="footer-col-heading">Shop</h4>
+                <ul class="footer-links">
+                  <li><a href="#products">New Arrivals</a></li>
+                  <li><a href="#products">For Women</a></li>
+                  <li><a href="#products">For Men</a></li>
+                  <li><a href="#deals">Sale</a></li>
+                  <li><a href="#featured">Calibre</a></li>
+                </ul>
+              </div>
 
-    <!-- Custom Scripts -->
-    <script src="js/main.js"></script>
-  </body>
+              <!-- Col 3: Company -->
+              <div class="footer-col">
+                <h4 class="footer-col-heading">Company</h4>
+                <ul class="footer-links">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Careers</a></li>
+                  <li><a href="#">Press</a></li>
+                  <li><a href="#">Sustainability</a></li>
+                  <li><a href="#">Affiliate Program</a></li>
+                </ul>
+              </div>
+
+              <!-- Col 4: Help & Contact -->
+              <div class="footer-col">
+                <h4 class="footer-col-heading">Help</h4>
+                <ul class="footer-links">
+                  <li><a href="#">Shipping & Returns</a></li>
+                  <li><a href="#">Size Guide</a></li>
+                  <li><a href="#">Track My Order</a></li>
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                </ul>
+                <div class="footer-contact">
+                  <p><i class="bi bi-envelope"></i> hello@flevie.com</p>
+                  <p><i class="bi bi-telephone"></i> +84 28 3456 7890</p>
+                </div>
+              </div>
+
+            </div><!-- /.footer-grid -->
+          </div>
+        </div><!-- /.footer-top -->
+
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="footer-bottom-inner">
+              <p class="footer-copy">&copy; 2026 Flevie. All rights reserved.</p>
+              <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Cookie Settings</a>
+              </div>
+              <div class="footer-payments">
+                <i class="bi bi-credit-card-2-front" title="Visa"></i>
+                <i class="bi bi-paypal" title="PayPal"></i>
+                <i class="bi bi-apple" title="Apple Pay"></i>
+              </div>
+            </div>
+          </div>
+        </div><!-- /.footer-bottom -->
+      </footer>
+
+    </div><!-- /#smooth-content -->
+  </div><!-- /#smooth-wrapper -->
+
+  <!-- ── Scroll to Top ── -->
+  <button id="scrollTop" aria-label="Scroll to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- GSAP Core & Plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollSmoother.min.js"></script>
+
+  <!-- Custom Scripts -->
+  <script src="js/main.js"></script>
+</body>
+
 </html>

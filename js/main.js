@@ -1,7 +1,8 @@
 /* ============================================================
    FLEVIE — Main JavaScript
    Features: Navbar scroll, Countdown, Smooth scroll,
-             Scroll-to-top, Fade-in animations, Product slider
+             Scroll-to-top, Fade-in animations, Product slider,
+             Momentum (inertia) scroll
    ============================================================ */
 
 "use strict";
@@ -30,33 +31,21 @@ function initCountdown() {
   const secs = $("#cd-secs");
   if (!days) return;
 
-  // Target: 2 days, 6 hours, 5 minutes from page load
   const target = new Date();
   target.setDate(target.getDate() + 2);
   target.setHours(target.getHours() + 6);
   target.setMinutes(target.getMinutes() + 5);
 
-  function pad(n) {
-    return String(n).padStart(2, "0");
-  }
+  function pad(n) { return String(n).padStart(2, "0"); }
 
   function tick() {
-    const now = Date.now();
-    const diff = Math.max(0, target - now);
-
-    const d = Math.floor(diff / 86400000);
-    const h = Math.floor((diff % 86400000) / 3600000);
-    const m = Math.floor((diff % 3600000) / 60000);
-    const s = Math.floor((diff % 60000) / 1000);
-
-    days.textContent = pad(d);
-    hours.textContent = pad(h);
-    mins.textContent = pad(m);
-    secs.textContent = pad(s);
-
+    const diff = Math.max(0, target - Date.now());
+    days.textContent = pad(Math.floor(diff / 86400000));
+    hours.textContent = pad(Math.floor((diff % 86400000) / 3600000));
+    mins.textContent = pad(Math.floor((diff % 3600000) / 60000));
+    secs.textContent = pad(Math.floor((diff % 60000) / 1000));
     if (diff > 0) requestAnimationFrame(() => setTimeout(tick, 1000));
   }
-
   tick();
 }
 
@@ -64,18 +53,10 @@ function initCountdown() {
 function initScrollTop() {
   const btn = $("#scrollTop");
   if (!btn) return;
-
-  window.addEventListener(
-    "scroll",
-    () => {
-      btn.classList.toggle("visible", window.scrollY > 400);
-    },
-    { passive: true },
-  );
-
-  btn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+  window.addEventListener("scroll", () => {
+    btn.classList.toggle("visible", window.scrollY > 400);
+  }, { passive: true });
+  btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 }
 
 /* ── Fade-up on Scroll (IntersectionObserver) ────────────── */
@@ -85,7 +66,6 @@ function initFadeUp() {
     els.forEach((el) => el.classList.add("visible"));
     return;
   }
-
   const obs = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -95,17 +75,16 @@ function initFadeUp() {
         }
       });
     },
-    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
   );
-
   els.forEach((el) => obs.observe(el));
 }
 
-/* ── Carousel Dots (passive, visual only) ────────────────── */
+/* ── Carousel Dots ───────────────────────────────────────── */
 function initDots() {
   $$(".carousel-dots").forEach((wrap) => {
     const dots = $$(".carousel-dot", wrap);
-    dots.forEach((dot, i) => {
+    dots.forEach((dot) => {
       dot.addEventListener("click", () => {
         dots.forEach((d) => d.classList.remove("active"));
         dot.classList.add("active");
@@ -114,7 +93,7 @@ function initDots() {
   });
 }
 
-/* ── Smooth Momentary In-Page Scrolling ──────────────────── */
+/* ── Smooth In-Page Anchor Scroll ────────────────────────── */
 function initSmoothScroll() {
   $$('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", (e) => {
@@ -128,21 +107,21 @@ function initSmoothScroll() {
   });
 }
 
-/* ── Product Slider (simple show/hide rows) ──────────────── */
+/* ── Product Slider ──────────────────────────────────────── */
 function initProductSliders() {
   $$("[data-slider]").forEach((wrap) => {
     const prev = $("[data-prev]", wrap.parentElement);
     const next = $("[data-next]", wrap.parentElement);
     const cards = $$(".product-card", wrap);
     let idx = 0;
+
+    // Always >= 2 per row
     const visibleCount = () =>
-      window.innerWidth < 576
-        ? 1
-        : window.innerWidth < 768
-          ? 2
-          : window.innerWidth < 992
-            ? 3
-            : 4;
+      window.innerWidth < 768
+        ? 2      // mobile  → 2 per row
+        : window.innerWidth < 992
+          ? 3    // tablet  → 3 per row
+          : 4;   // desktop → 4 per row
 
     const show = () => {
       const cnt = visibleCount();
@@ -151,16 +130,11 @@ function initProductSliders() {
       });
     };
 
-    if (prev)
-      prev.addEventListener("click", () => {
-        idx = Math.max(0, idx - 1);
-        show();
-      });
-    if (next)
-      next.addEventListener("click", () => {
-        idx = Math.min(cards.length - visibleCount(), idx + 1);
-        show();
-      });
+    if (prev) prev.addEventListener("click", () => { idx = Math.max(0, idx - 1); show(); });
+    if (next) next.addEventListener("click", () => {
+      idx = Math.min(cards.length - visibleCount(), idx + 1);
+      show();
+    });
 
     window.addEventListener("resize", show, { passive: true });
     show();
@@ -171,13 +145,11 @@ function initProductSliders() {
 function initNewsletter() {
   const form = $("#newsletterForm");
   if (!form) return;
-
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const input = $('input[type="email"]', form);
     const btn = $("button", form);
     if (!input.value.trim()) return;
-
     btn.textContent = "Subscribed ✓";
     btn.disabled = true;
     btn.style.background = "var(--color-accent)";
@@ -190,14 +162,13 @@ function initNewsletter() {
   });
 }
 
-/* ── Deals Slider (crossfade, 8 sec auto-advance) ────────────── */
+/* ── Deals Slider ────────────────────────────────────────── */
 function initDealsSlider() {
   const slides = $$(".deals-slide");
-  const dots   = $$("#dealsDots .carousel-dot");
+  const dots = $$("#dealsDots .carousel-dot");
   if (!slides.length) return;
 
-  let current = 0;
-  let timer   = null;
+  let current = 0, timer = null;
 
   function goTo(n) {
     slides[current].classList.remove("active");
@@ -206,75 +177,44 @@ function initDealsSlider() {
     slides[current].classList.add("active");
     dots[current]?.classList.add("active");
   }
+  const startTimer = () => { timer = setInterval(() => goTo(current + 1), 8000); };
+  const resetTimer = () => { clearInterval(timer); startTimer(); };
 
-  function startTimer() {
-    timer = setInterval(() => goTo(current + 1), 8000);
-  }
-
-  function resetTimer() {
-    clearInterval(timer);
-    startTimer();
-  }
-
-  dots.forEach((dot, i) => {
-    dot.addEventListener("click", () => { goTo(i); resetTimer(); });
-  });
+  dots.forEach((dot, i) => dot.addEventListener("click", () => { goTo(i); resetTimer(); }));
 
   const slider = $("#dealsSlider");
   if (slider) {
     slider.addEventListener("mouseenter", () => clearInterval(timer));
     slider.addEventListener("mouseleave", startTimer);
   }
-
   startTimer();
 }
 
-/* ── Hero Travel Slider (left / center / right frames) ────── */
+/* ── Hero Slider ─────────────────────────────────────────── */
 function initHeroSlider() {
   const items = $$(".hero-item");
-  const dots  = $$(".hero-dot");
-  const prev  = $("#heroPrev");
-  const next  = $("#heroNext");
+  const dots = $$(".hero-dot");
+  const prev = $("#heroPrev");
+  const next = $("#heroNext");
   const total = items.length;
   if (!total) return;
 
-  const POS = [
-    "pos-center",
-    "pos-right",
-    "pos-hidden-right",
-    "pos-hidden-left",
-    "pos-left",
-  ];
-
-  let activeCenter = 0;
-  let timer = null;
+  const POS = ["pos-center", "pos-right", "pos-hidden-right", "pos-hidden-left", "pos-left"];
+  let activeCenter = 0, timer = null;
 
   function updatePositions() {
     items.forEach((item, i) => {
       item.classList.remove(...POS);
-      const rel = (i - activeCenter + total) % total;
-      item.classList.add(POS[rel]);
+      item.classList.add(POS[(i - activeCenter + total) % total]);
     });
     dots.forEach((d, i) => d.classList.toggle("active", i === activeCenter));
   }
-
-  function goTo(newCenter) {
-    activeCenter = ((newCenter % total) + total) % total;
-    updatePositions();
-  }
-
-  function startTimer() {
-    timer = setInterval(() => goTo(activeCenter + 1), 8000);
-  }
-
-  function resetTimer() {
-    clearInterval(timer);
-    startTimer();
-  }
+  function goTo(n) { activeCenter = ((n % total) + total) % total; updatePositions(); }
+  const startTimer = () => { timer = setInterval(() => goTo(activeCenter + 1), 8000); };
+  const resetTimer = () => { clearInterval(timer); startTimer(); };
 
   if (prev) prev.addEventListener("click", () => { goTo(activeCenter - 1); resetTimer(); });
   if (next) next.addEventListener("click", () => { goTo(activeCenter + 1); resetTimer(); });
-
   dots.forEach((dot, i) => dot.addEventListener("click", () => { goTo(i); resetTimer(); }));
 
   const stage = $(".hero-stage");
@@ -282,23 +222,38 @@ function initHeroSlider() {
     stage.addEventListener("mouseenter", () => clearInterval(timer));
     stage.addEventListener("mouseleave", startTimer);
   }
-
   updatePositions();
   startTimer();
 }
 
-/* ── Bootstrap Mobile Menu: close on link click ─────────── */
+/* ── Bootstrap Mobile Menu ───────────────────────────────── */
 function initMobileMenu() {
   const toggler = $(".navbar-toggler");
   const collapse = $("#navCollapse");
   if (!toggler || !collapse) return;
-
   $$(".navbar-nav .nav-link", collapse).forEach((link) => {
     link.addEventListener("click", () => {
       const bsCollapse = bootstrap.Collapse.getInstance(collapse);
       if (bsCollapse) bsCollapse.hide();
     });
   });
+}
+
+/* ── GSAP ScrollSmoother ──────────────────────────────────────
+   Uses GSAP ScrollSmoother for premium inertia scrolling.
+──────────────────────────────────────────────────────────── */
+function initMomentumScroll() {
+  // 17. scroll wrapper //
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
+
+  if ($('#smooth-wrapper') && $('#smooth-content')) {
+    ScrollSmoother.create({
+      smooth: 1.35,
+      effects: true,
+      smoothTouch: 0.1,
+      ignoreMobileResize: true
+    });
+  }
 }
 
 /* ── Init All ────────────────────────────────────────────── */
@@ -314,4 +269,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initDealsSlider();
   initHeroSlider();
   initMobileMenu();
+  initMomentumScroll();
 });
