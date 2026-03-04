@@ -166,6 +166,8 @@ function initNewsletter() {
 function initDealsSlider() {
   const slides = $$(".deals-slide");
   const dots = $$("#dealsDots .carousel-dot");
+  const prevBtn = $(".deals-prev", $("#dealsSlider"));
+  const nextBtn = $(".deals-next", $("#dealsSlider"));
   if (!slides.length) return;
 
   let current = 0, timer = null;
@@ -181,6 +183,8 @@ function initDealsSlider() {
   const resetTimer = () => { clearInterval(timer); startTimer(); };
 
   dots.forEach((dot, i) => dot.addEventListener("click", () => { goTo(i); resetTimer(); }));
+  if (prevBtn) prevBtn.addEventListener("click", () => { goTo(current - 1); resetTimer(); });
+  if (nextBtn) nextBtn.addEventListener("click", () => { goTo(current + 1); resetTimer(); });
 
   const slider = $("#dealsSlider");
   if (slider) {
@@ -231,8 +235,26 @@ function initMobileMenu() {
   const toggler = $(".navbar-toggler");
   const collapse = $("#navCollapse");
   if (!toggler || !collapse) return;
-  $$(".navbar-nav .nav-link", collapse).forEach((link) => {
+
+  // Handle dropdown toggles on mobile
+  $$(".custom-dropdown-link > .nav-link", collapse).forEach((link) => {
+    link.addEventListener("click", (e) => {
+      // Only behave as toggle on mobile view
+      if (window.innerWidth < 992) {
+        e.preventDefault();
+        const parent = link.parentElement;
+        parent.classList.toggle("open");
+      }
+    });
+  });
+
+  // Close the menu when a standard link or a dropdown item is clicked
+  $$(".navbar-nav .nav-link, .custom-dropdown-menu a", collapse).forEach((link) => {
     link.addEventListener("click", () => {
+      // Do nothing if it's hitting a dropdown toggle on mobile
+      if (window.innerWidth < 992 && link.parentElement.classList.contains("custom-dropdown-link")) {
+        return;
+      }
       const bsCollapse = bootstrap.Collapse.getInstance(collapse);
       if (bsCollapse) bsCollapse.hide();
     });
@@ -256,6 +278,38 @@ function initMomentumScroll() {
   }
 }
 
+/* ── Shop Page Filters ───────────────────────────────────── */
+function initShopFilters() {
+  const clearBtn = $("#clearFiltersBtn");
+  const applyBtn = $("#applyFiltersBtn");
+  if (!clearBtn || !applyBtn) return;
+
+  clearBtn.addEventListener("click", () => {
+    // Uncheck all checkboxes
+    $$(".shop-sidebar .filter-check input[type='checkbox']").forEach(cb => cb.checked = false);
+    
+    // Remove active styles from buttons and tags
+    $$(".size-btn, .color-btn, .sidebar-tag").forEach(btn => btn.classList.remove("active"));
+  });
+
+  applyBtn.addEventListener("click", () => {
+    const originalText = applyBtn.textContent;
+    applyBtn.textContent = "Applied ✓";
+    applyBtn.style.background = "var(--color-accent)";
+    setTimeout(() => {
+      applyBtn.textContent = originalText;
+      applyBtn.style.background = "";
+    }, 1500);
+  });
+
+  // Handle click toggling on buttons and tags for demo purposes
+  $$(".size-btn, .color-btn, .sidebar-tag").forEach(btn => {
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+    });
+  });
+}
+
 /* ── Init All ────────────────────────────────────────────── */
 document.addEventListener("DOMContentLoaded", () => {
   initNavbar();
@@ -270,4 +324,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeroSlider();
   initMobileMenu();
   initMomentumScroll();
+  initShopFilters();
 });

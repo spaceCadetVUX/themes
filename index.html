@@ -47,12 +47,25 @@
               <li class="nav-item">
                 <a class="nav-link active" href="#hero">Home</a>
               </li>
-              <li class="nav-item"><a class="nav-link" href="#deals">Shop</a></li>
+              <li class="nav-item custom-dropdown-link">
+                <a class="nav-link" href="#deals">Shop <i class="bi bi-chevron-down ms-1 nav-dropdown-icon"></i></a>
+                <ul class="custom-dropdown-menu">
+                  <li><a href="products.html">All Products</a></li>
+                  <li><a href="products.html">Women's Collection</a></li>
+                  <li><a href="products.html">Men's Collection</a></li>
+                  <li><a href="#deals">Deals of the Month</a></li>
+                </ul>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="#featured">About</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#products">Pages</a>
+              <li class="nav-item custom-dropdown-link">
+                <a class="nav-link" href="#products">Pages <i class="bi bi-chevron-down ms-1 nav-dropdown-icon"></i></a>
+                <ul class="custom-dropdown-menu">
+                  <li><a href="products.html">Shop Dashboard</a></li>
+                  <li><a href="index.html#featured">Brands</a></li>
+                  <li><a href="index.html#products">Portfolio</a></li>
+                </ul>
               </li>
             </ul>
 
@@ -222,47 +235,46 @@
             <div class="col-lg-7 fade-up">
               <div class="deals-slider" id="dealsSlider">
 
-                <!-- Slide 1: 3-image collage -->
+                <!-- Slide 1 -->
                 <div class="deals-slide active">
-                  <div class="deals-slide-grid grid-3">
-                    <img src="fashion/fas (3).jpg" alt="Deals 1a" class="ds-img ds-img-a" />
-                    <img src="fashion/fas (4).jpg" alt="Deals 1b" class="ds-img ds-img-b" />
-                    <img src="fashion/fas (5).jpg" alt="Deals 1c" class="ds-img ds-img-c" />
+                  <img src="fashion/fas (3).jpg" alt="Deals 1" />
+                  <div class="deals-cta-overlay">
+                    <a href="#products" class="btn-white-custom deals-cta-btn">Shop Casual Luxe</a>
                   </div>
                 </div>
 
-                <!-- Slide 2: 3-image collage with badge -->
+                <!-- Slide 2 -->
                 <div class="deals-slide">
-                  <div class="deals-slide-grid grid-3">
-                    <img src="fashion/fas (17).jpg" alt="Deals 2a" class="ds-img ds-img-a" />
-                    <img src="fashion/fas (23).jpg" alt="Deals 2b" class="ds-img ds-img-b" />
-                    <div class="ds-img ds-img-c" style="position:relative;overflow:hidden;">
-                      <img src="fashion/fas (28).jpg" alt="Deals 2c"
-                        style="width:100%;height:100%;object-fit:cover;display:block;" />
-                      <div class="deals-badge"><span>50%</span>OFF</div>
-                    </div>
+                  <img src="fashion/fas (28).jpg" alt="Deals 2" />
+                  <div class="deals-badge"><span>50%</span>OFF</div>
+                  <div class="deals-cta-overlay">
+                    <a href="#products" class="btn-white-custom deals-cta-btn">Discover Offers</a>
                   </div>
                 </div>
 
-                <!-- Slide 3: 4-image 2×2 grid -->
+                <!-- Slide 3 -->
                 <div class="deals-slide">
-                  <div class="deals-slide-grid grid-4">
-                    <img src="fashion/fas (30).jpg" alt="Deals 3a" class="ds-img" />
-                    <img src="fashion/fas (33).jpg" alt="Deals 3b" class="ds-img" />
-                    <img src="fashion/fas (45).jpg" alt="Deals 3c" class="ds-img" />
-                    <img src="fashion/fas (50).jpg" alt="Deals 3d" class="ds-img" />
+                  <img src="fashion/fas (45).jpg" alt="Deals 3" />
+                  <div class="deals-cta-overlay">
+                    <a href="#products" class="btn-white-custom deals-cta-btn">Explore Collection</a>
                   </div>
                 </div>
 
-                <!-- Slide 4: 4-image 2×2 grid -->
+                <!-- Slide 4 -->
                 <div class="deals-slide">
-                  <div class="deals-slide-grid grid-4">
-                    <img src="fashion/fas (56).jpg" alt="Deals 4a" class="ds-img" />
-                    <img src="fashion/fas (57).jpg" alt="Deals 4b" class="ds-img" />
-                    <img src="fashion/fas (58).jpg" alt="Deals 4c" class="ds-img" />
-                    <img src="fashion/fas (59).jpg" alt="Deals 4d" class="ds-img" />
+                  <img src="fashion/fas (56).jpg" alt="Deals 4" />
+                  <div class="deals-cta-overlay">
+                    <a href="#products" class="btn-white-custom deals-cta-btn">Get The Look</a>
                   </div>
                 </div>
+
+                <!-- Navigation Arrows -->
+                <button type="button" class="deals-arrow deals-prev" aria-label="Previous Deal">
+                  <i class="bi bi-chevron-left"></i>
+                </button>
+                <button type="button" class="deals-arrow deals-next" aria-label="Next Deal">
+                  <i class="bi bi-chevron-right"></i>
+                </button>
 
               </div>
               <div class="carousel-dots mt-3" id="dealsDots">
