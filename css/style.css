@@ -1153,7 +1153,7 @@ calibre-blog-grid .carousel-dot {
   .calibre-blog-grid {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    grid-auto-rows: 280px;
+    grid-auto-rows: minmax(280px, auto);
   }
 
   .cblog-1 {
@@ -1201,7 +1201,7 @@ calibre-blog-grid .carousel-dot {
 @media (max-width: 540px) {
   .calibre-blog-grid {
     grid-template-columns: 1fr;
-    grid-auto-rows: 260px;
+    grid-auto-rows: minmax(260px, auto);
   }
 
   .cblog-1,
