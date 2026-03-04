@@ -278,6 +278,145 @@ function initMomentumScroll() {
   }
 }
 
+/* ── Product Detail Page ────────────────────────────────────
+   All functions below only run on product-detail.html.
+   Each one guards itself with an early return if the key
+   element doesn't exist, so they're safe to call on any page.
+──────────────────────────────────────────────────────────── */
+
+/* ── Gallery: thumbnail switching ─────── */
+function initGallery() {
+  const mainImg = document.getElementById("pdMainImg");
+  const thumbBtns = document.querySelectorAll(".pd-thumb");
+  if (!mainImg || !thumbBtns.length) return;
+
+  thumbBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const imgSrc = btn.dataset.img;
+      mainImg.style.opacity = "0";
+      setTimeout(() => {
+        mainImg.src = imgSrc;
+        mainImg.style.opacity = "1";
+      }, 200);
+      thumbBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+    });
+  });
+}
+
+/* ── Size selector ────────────────────── */
+function initSizeSelector() {
+  const grid = document.getElementById("pdSizeGrid");
+  const label = document.getElementById("pdSelectedSize");
+  if (!grid) return;
+  grid.querySelectorAll(".pd-size-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      grid.querySelectorAll(".pd-size-btn").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      if (label) label.textContent = btn.textContent.trim();
+    });
+  });
+}
+
+/* ── Color selector ──────────────────── */
+function initColorSelector() {
+  const grid = document.getElementById("pdColorGrid");
+  const label = document.getElementById("pdSelectedColor");
+  if (!grid) return;
+  grid.querySelectorAll(".pd-color-swatch").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      grid.querySelectorAll(".pd-color-swatch").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      if (label) label.textContent = btn.dataset.color;
+    });
+  });
+}
+
+/* ── Quantity stepper ────────────────── */
+function initQtyStepper() {
+  const input = document.getElementById("pdQtyInput");
+  const minus = document.getElementById("pdQtyMinus");
+  const plus  = document.getElementById("pdQtyPlus");
+  if (!input) return;
+
+  minus.addEventListener("click", () => {
+    const val = parseInt(input.value) || 1;
+    input.value = Math.max(1, val - 1);
+  });
+  plus.addEventListener("click", () => {
+    const val = parseInt(input.value) || 1;
+    input.value = Math.min(99, val + 1);
+  });
+}
+
+/* ── Flash sale countdown ────────────── */
+function initFlashCountdown() {
+  const hEl = document.getElementById("pd-cd-hours");
+  const mEl = document.getElementById("pd-cd-mins");
+  const sEl = document.getElementById("pd-cd-secs");
+  if (!hEl) return;
+
+  const end = Date.now() + (5 * 3600 + 30 * 60) * 1000;
+  function pad(n) { return String(n).padStart(2, "0"); }
+  function tick() {
+    const diff = Math.max(0, end - Date.now());
+    hEl.textContent = pad(Math.floor(diff / 3600000));
+    mEl.textContent = pad(Math.floor((diff % 3600000) / 60000));
+    sEl.textContent = pad(Math.floor((diff % 60000) / 1000));
+    if (diff > 0) setTimeout(tick, 1000);
+  }
+  tick();
+}
+
+/* ── Tab system ──────────────────────── */
+function initTabs() {
+  const tabs   = document.querySelectorAll(".pd-tab");
+  const panels = document.querySelectorAll(".pd-tab-panel");
+  if (!tabs.length) return;
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const target = tab.dataset.tab;
+      tabs.forEach((t)   => t.classList.remove("active"));
+      panels.forEach((p) => p.classList.remove("active"));
+      tab.classList.add("active");
+      const panel = document.querySelector(`.pd-tab-panel[data-panel="${target}"]`);
+      if (panel) panel.classList.add("active");
+    });
+  });
+}
+
+/* ── Add to Cart feedback ────────────── */
+function initAddToCart() {
+  const btn          = document.getElementById("pdAddToCart");
+  const toast        = document.getElementById("pdToast");
+  const wishlistIcon = document.getElementById("pdWishlistIcon");
+  const wishlistBtn  = document.getElementById("pdWishlistBtn");
+  if (!btn) return;
+
+  btn.addEventListener("click", () => {
+    toast.classList.add("show");
+    setTimeout(() => toast.classList.remove("show"), 2500);
+    btn.innerHTML = '<i class="bi bi-check-lg me-2"></i>Added!';
+    btn.style.background   = "var(--color-accent)";
+    btn.style.borderColor  = "var(--color-accent)";
+    setTimeout(() => {
+      btn.innerHTML = '<i class="bi bi-bag-plus me-2"></i>Add to Cart';
+      btn.style.background  = "";
+      btn.style.borderColor = "";
+    }, 2000);
+  });
+
+  [wishlistIcon, wishlistBtn].forEach((b) => {
+    if (!b) return;
+    b.addEventListener("click", () => {
+      b.classList.toggle("active");
+      const icon = b.querySelector("i");
+      if (icon) icon.className = b.classList.contains("active") ? "bi bi-heart-fill" : "bi bi-heart";
+    });
+  });
+}
+
 /* ── Shop Page Filters ───────────────────────────────────── */
 function initShopFilters() {
   const clearBtn = $("#clearFiltersBtn");
@@ -325,4 +464,14 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();
   initMomentumScroll();
   initShopFilters();
+
+  // Product Detail page — safe to call on every page;
+  // each function returns early if its elements don't exist.
+  initGallery();
+  initSizeSelector();
+  initColorSelector();
+  initQtyStepper();
+  initFlashCountdown();
+  initTabs();
+  initAddToCart();
 });

@@ -1,0 +1,747 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Flevie — Leather Jacket. Premium fashion for the modern individual. Shop the full Calibre collection." />
+  <title>Flevie — Leather Jacket | Product Details</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+    rel="stylesheet" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+
+      <!-- ==========================================
+           NAVBAR
+           ========================================== -->
+      <nav id="mainNav" class="navbar navbar-expand-lg">
+        <div class="container">
+          <!-- Logo -->
+          <a class="navbar-brand nav-logo" href="index.html">Flevie</a>
+
+          <!-- Mobile toggler -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse"
+            aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Nav links + icons -->
+          <div class="collapse navbar-collapse" id="navCollapse">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item custom-dropdown-link">
+                <a class="nav-link active" href="products.html">Shop <i class="bi bi-chevron-down ms-1 nav-dropdown-icon"></i></a>
+                <ul class="custom-dropdown-menu">
+                  <li><a href="products.html">All Products</a></li>
+                  <li><a href="products.html">Women's Collection</a></li>
+                  <li><a href="products.html">Men's Collection</a></li>
+                  <li><a href="index.html#deals">Deals of the Month</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#featured">About</a>
+              </li>
+              <li class="nav-item custom-dropdown-link">
+                <a class="nav-link" href="index.html#products">Pages <i class="bi bi-chevron-down ms-1 nav-dropdown-icon"></i></a>
+                <ul class="custom-dropdown-menu">
+                  <li><a href="products.html">Shop Dashboard</a></li>
+                  <li><a href="index.html#featured">Brands</a></li>
+                  <li><a href="index.html#products">Portfolio</a></li>
+                </ul>
+              </li>
+            </ul>
+
+            <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+              <button type="button" class="nav-icon-btn" aria-label="Search"><i class="bi bi-search"></i></button>
+              <button type="button" class="nav-icon-btn" aria-label="User"><i class="bi bi-person"></i></button>
+              <button type="button" class="nav-icon-btn" aria-label="Favorites"><i class="bi bi-heart"></i></button>
+              <button type="button" class="nav-icon-btn" aria-label="Cart"><i class="bi bi-bag" id="cartIcon"></i></button>
+              <button class="nav-signup-btn ms-2">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- ==========================================
+           BREADCRUMB
+           ========================================== -->
+      <div class="pd-breadcrumb">
+        <div class="container">
+          <nav aria-label="breadcrumb">
+            <ol class="pd-breadcrumb-list">
+              <li><a href="index.html">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i></li>
+              <li><a href="products.html">Shop</a></li>
+              <li><i class="bi bi-chevron-right"></i></li>
+              <li class="active">Leather Jacket</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           PRODUCT DETAIL SECTION
+           ========================================== -->
+      <section id="productDetail" class="pd-section section-pad">
+        <div class="container">
+          <div class="row g-5 g-lg-6">
+
+            <!-- ── LEFT: Image Gallery ── -->
+            <div class="col-lg-7 fade-up">
+              <div class="pd-gallery">
+                <!-- Thumbnail Strip -->
+                <div class="pd-thumbs" id="pdThumbs">
+                  <button class="pd-thumb active" data-img="fashion/fas (56).jpg" aria-label="View image 1">
+                    <img src="fashion/fas (56).jpg" alt="Leather Jacket - View 1" />
+                  </button>
+                  <button class="pd-thumb" data-img="fashion/fas (43).jpg" aria-label="View image 2">
+                    <img src="fashion/fas (43).jpg" alt="Leather Jacket - View 2" />
+                  </button>
+                  <button class="pd-thumb" data-img="fashion/fas (58).jpg" aria-label="View image 3">
+                    <img src="fashion/fas (58).jpg" alt="Leather Jacket - View 3" />
+                  </button>
+                  <button class="pd-thumb" data-img="fashion/fas (59).jpg" aria-label="View image 4">
+                    <img src="fashion/fas (59).jpg" alt="Leather Jacket - View 4" />
+                  </button>
+                </div>
+
+                <!-- Main Image -->
+                <div class="pd-main-img-wrap">
+                  <img src="fashion/fas (56).jpg" alt="Leather Jacket — Main View" id="pdMainImg" class="pd-main-img" />
+                  <!-- Badge -->
+                  <span class="pd-img-badge">New</span>
+                  <!-- Zoom hint -->
+                  <div class="pd-zoom-hint"><i class="bi bi-zoom-in"></i></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── RIGHT: Product Info ── -->
+            <div class="col-lg-5 fade-up">
+              <div class="pd-info">
+
+                <!-- Brand + Wishlist -->
+                <div class="pd-info-top">
+                  <span class="pd-brand">Calibre</span>
+                  <button class="pd-wishlist-btn" aria-label="Add to wishlist" id="pdWishlistBtn">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                </div>
+
+                <!-- Product name -->
+                <h1 class="pd-title">Leather Jacket</h1>
+
+                <!-- Rating -->
+                <div class="pd-rating">
+                  <span class="pd-stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+                  </span>
+                  <span class="pd-review-count">(128 Reviews)</span>
+                  <span class="pd-in-stock"><i class="bi bi-check-circle-fill"></i> In Stock</span>
+                </div>
+
+                <!-- Price -->
+                <div class="pd-price-row">
+                  <span class="pd-price">5,200,000 VND</span>
+                  <span class="pd-old-price">6,500,000 VND</span>
+                  <span class="pd-discount-badge">–20%</span>
+                </div>
+
+                <!-- Flash Sale Countdown -->
+                <div class="pd-flash-sale">
+                  <span class="pd-flash-label"><i class="bi bi-lightning-charge-fill"></i> Flash Sale ends in:</span>
+                  <div class="pd-flash-countdown">
+                    <div class="pd-cd-unit">
+                      <span class="pd-cd-num" id="pd-cd-hours">00</span>
+                      <span class="pd-cd-text">Hrs</span>
+                    </div>
+                    <span class="pd-cd-sep">:</span>
+                    <div class="pd-cd-unit">
+                      <span class="pd-cd-num" id="pd-cd-mins">05</span>
+                      <span class="pd-cd-text">Min</span>
+                    </div>
+                    <span class="pd-cd-sep">:</span>
+                    <div class="pd-cd-unit">
+                      <span class="pd-cd-num" id="pd-cd-secs">30</span>
+                      <span class="pd-cd-text">Sec</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="pd-divider"></div>
+
+                <!-- Description -->
+                <p class="pd-description">
+                  A timeless statement piece crafted from premium full-grain leather.
+                  Slim cut with a refined lapel and polished hardware — engineered for the
+                  man who commands every room he enters. Pairs effortlessly with dark denim
+                  or tailored trousers.
+                </p>
+
+                <!-- Size Selector -->
+                <div class="pd-option-group">
+                  <div class="pd-option-label">
+                    Size: <span class="pd-selected-size" id="pdSelectedSize">M</span>
+                    <a href="#" class="pd-size-guide">Size Guide <i class="bi bi-rulers"></i></a>
+                  </div>
+                  <div class="pd-size-grid" id="pdSizeGrid">
+                    <button class="pd-size-btn">S</button>
+                    <button class="pd-size-btn active">M</button>
+                    <button class="pd-size-btn">L</button>
+                    <button class="pd-size-btn">XL</button>
+                    <button class="pd-size-btn">XXL</button>
+                  </div>
+                </div>
+
+                <!-- Color Selector -->
+                <div class="pd-option-group">
+                  <div class="pd-option-label">Color: <span class="pd-selected-color" id="pdSelectedColor">Black</span></div>
+                  <div class="pd-color-grid" id="pdColorGrid">
+                    <button class="pd-color-swatch active" style="background:#1a1a1a;" data-color="Black"
+                      aria-label="Black"></button>
+                    <button class="pd-color-swatch" style="background:#8b6c4f;" data-color="Camel"
+                      aria-label="Camel"></button>
+                    <button class="pd-color-swatch" style="background:#c8c8c8; border: 1px solid #aaa;" data-color="Silver"
+                      aria-label="Silver"></button>
+                  </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="pd-divider"></div>
+
+                <!-- Quantity + Add to Cart -->
+                <div class="pd-add-row">
+                  <!-- Qty Stepper -->
+                  <div class="pd-qty-wrap">
+                    <button class="pd-qty-btn" id="pdQtyMinus" aria-label="Decrease quantity">
+                      <i class="bi bi-dash"></i>
+                    </button>
+                    <input type="number" class="pd-qty-input" id="pdQtyInput" value="1" min="1" max="99"
+                      aria-label="Quantity" readonly />
+                    <button class="pd-qty-btn" id="pdQtyPlus" aria-label="Increase quantity">
+                      <i class="bi bi-plus"></i>
+                    </button>
+                  </div>
+
+                  <!-- Add to Cart -->
+                  <button class="btn-dark-custom pd-add-to-cart" id="pdAddToCart">
+                    <i class="bi bi-bag-plus me-2"></i>Add to Cart
+                  </button>
+
+                  <!-- Wishlist -->
+                  <button class="pd-wishlist-icon-btn" id="pdWishlistIcon" aria-label="Add to wishlist">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="pd-trust">
+                  <div class="pd-trust-item">
+                    <i class="bi bi-truck"></i>
+                    <div>
+                      <span class="pd-trust-title">Free Shipping</span>
+                      <span class="pd-trust-sub">Orders over 2M VND</span>
+                    </div>
+                  </div>
+                  <div class="pd-trust-item">
+                    <i class="bi bi-arrow-repeat"></i>
+                    <div>
+                      <span class="pd-trust-title">Free Returns</span>
+                      <span class="pd-trust-sub">Within 30 days</span>
+                    </div>
+                  </div>
+                  <div class="pd-trust-item">
+                    <i class="bi bi-shield-check"></i>
+                    <div>
+                      <span class="pd-trust-title">Secure Payment</span>
+                      <span class="pd-trust-sub">100% protected</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Payment icons -->
+                <div class="pd-payments">
+                  <span class="pd-payments-label">We Accept:</span>
+                  <i class="bi bi-credit-card-2-front" title="Visa"></i>
+                  <i class="bi bi-paypal" title="PayPal"></i>
+                  <i class="bi bi-apple" title="Apple Pay"></i>
+                  <i class="bi bi-google" title="Google Pay"></i>
+                </div>
+
+              </div><!-- /.pd-info -->
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container -->
+      </section>
+
+      <!-- ==========================================
+           PRODUCT TABS (Description / Reviews)
+           ========================================== -->
+      <section class="pd-tabs-section">
+        <div class="container">
+          <div class="pd-tabs" id="pdTabs">
+            <button class="pd-tab active" data-tab="description">Description</button>
+            <button class="pd-tab" data-tab="details">Details & Care</button>
+            <button class="pd-tab" data-tab="reviews">Reviews (128)</button>
+          </div>
+
+          <div class="pd-tab-content" id="pdTabContent">
+
+            <!-- Tab: Description -->
+            <div class="pd-tab-panel active" data-panel="description">
+              <div class="row g-5 align-items-center">
+                <div class="col-md-6">
+                  <h3 class="pd-desc-heading">Crafted for the Modern Gentleman</h3>
+                  <p>Our signature Leather Jacket is crafted from full-grain bovine leather, sourced from certified
+                    tanneries in Northern Italy. The slim-fit silhouette is reinforced with a mid-weight quilted lining
+                    that provides warmth without sacrificing structure.</p>
+                  <p>Polished gunmetal hardware, functional interior pockets, and a perfectly weighted collar make this
+                    the ultimate wardrobe investment.</p>
+                  <ul class="pd-desc-list">
+                    <li><i class="bi bi-check2"></i> Full-grain Italian leather</li>
+                    <li><i class="bi bi-check2"></i> Quilted viscose lining</li>
+                    <li><i class="bi bi-check2"></i> YKK gunmetal zippers</li>
+                    <li><i class="bi bi-check2"></i> Slim fit, true to size</li>
+                    <li><i class="bi bi-check2"></i> Made in Vietnam</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <div class="pd-desc-img-wrap">
+                    <img src="fashion/fas (57).jpg" alt="Leather Jacket Detail" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab: Details & Care -->
+            <div class="pd-tab-panel" data-panel="details">
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <h4 class="pd-details-heading">Product Details</h4>
+                  <table class="pd-details-table">
+                    <tr><td>Material</td><td>100% Full-Grain Leather</td></tr>
+                    <tr><td>Lining</td><td>Quilted Viscose</td></tr>
+                    <tr><td>Fit</td><td>Slim Fit</td></tr>
+                    <tr><td>Collar</td><td>Notched Lapel</td></tr>
+                    <tr><td>Closure</td><td>Front Zip with Snap Button</td></tr>
+                    <tr><td>Pockets</td><td>2 Side + 1 Interior</td></tr>
+                    <tr><td>Origin</td><td>Made in Vietnam</td></tr>
+                    <tr><td>SKU</td><td>CLB-LJ-BLK-001</td></tr>
+                  </table>
+                </div>
+                <div class="col-md-6">
+                  <h4 class="pd-details-heading">Care Instructions</h4>
+                  <ul class="pd-care-list">
+                    <li><i class="bi bi-droplet-slash"></i> Do not wash in machine</li>
+                    <li><i class="bi bi-thermometer-low"></i> Do not tumble dry</li>
+                    <li><i class="bi bi-x-circle"></i> Do not bleach</li>
+                    <li><i class="bi bi-brush"></i> Wipe with damp cloth only</li>
+                    <li><i class="bi bi-bag"></i> Store in dust bag when not in use</li>
+                    <li><i class="bi bi-star"></i> Professional leather cleaning recommended</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab: Reviews -->
+            <div class="pd-tab-panel" data-panel="reviews">
+              <div class="row g-5">
+                <!-- Rating Summary -->
+                <div class="col-md-4">
+                  <div class="pd-review-summary">
+                    <div class="pd-review-avg">4.5</div>
+                    <div class="pd-review-stars-lg">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-half"></i>
+                    </div>
+                    <p class="pd-review-total">Based on 128 reviews</p>
+                    <div class="pd-review-bars">
+                      <div class="pd-review-bar-row"><span>5★</span>
+                        <div class="pd-bar"><div class="pd-bar-fill" style="width:72%"></div></div>
+                        <span>72%</span>
+                      </div>
+                      <div class="pd-review-bar-row"><span>4★</span>
+                        <div class="pd-bar"><div class="pd-bar-fill" style="width:18%"></div></div>
+                        <span>18%</span>
+                      </div>
+                      <div class="pd-review-bar-row"><span>3★</span>
+                        <div class="pd-bar"><div class="pd-bar-fill" style="width:6%"></div></div>
+                        <span>6%</span>
+                      </div>
+                      <div class="pd-review-bar-row"><span>2★</span>
+                        <div class="pd-bar"><div class="pd-bar-fill" style="width:3%"></div></div>
+                        <span>3%</span>
+                      </div>
+                      <div class="pd-review-bar-row"><span>1★</span>
+                        <div class="pd-bar"><div class="pd-bar-fill" style="width:1%"></div></div>
+                        <span>1%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Review Cards -->
+                <div class="col-md-8">
+                  <div class="pd-review-list">
+                    <!-- Review 1 -->
+                    <div class="pd-review-card">
+                      <div class="pd-review-header">
+                        <div class="pd-reviewer-avatar">M</div>
+                        <div>
+                          <p class="pd-reviewer-name">Minh P.</p>
+                          <div class="pd-reviewer-stars">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                          </div>
+                        </div>
+                        <span class="pd-review-date ms-auto">Feb 2026</span>
+                      </div>
+                      <p class="pd-review-text">Absolutely stunning jacket. The leather quality is exceptional — very supple right out of the box. Fits true to size and the stitching is immaculate.</p>
+                    </div>
+                    <!-- Review 2 -->
+                    <div class="pd-review-card">
+                      <div class="pd-review-header">
+                        <div class="pd-reviewer-avatar">A</div>
+                        <div>
+                          <p class="pd-reviewer-name">An T.</p>
+                          <div class="pd-reviewer-stars">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star"></i>
+                          </div>
+                        </div>
+                        <span class="pd-review-date ms-auto">Jan 2026</span>
+                      </div>
+                      <p class="pd-review-text">Great investment piece. Slightly stiff at first but breaks in beautifully. The lining keeps me warm without bulk. Delivery was fast too.</p>
+                    </div>
+                    <!-- Review 3 -->
+                    <div class="pd-review-card">
+                      <div class="pd-review-header">
+                        <div class="pd-reviewer-avatar">H</div>
+                        <div>
+                          <p class="pd-reviewer-name">Hana N.</p>
+                          <div class="pd-reviewer-stars">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                          </div>
+                        </div>
+                        <span class="pd-review-date ms-auto">Dec 2025</span>
+                      </div>
+                      <p class="pd-review-text">Gorgeous in person. The camel colour is so rich. Bought it as a gift and my partner absolutely loves it. Would definitely shop Flevie again.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /.pd-tab-content -->
+        </div><!-- /.container -->
+      </section>
+
+      <!-- ==========================================
+           RELATED PRODUCTS
+           ========================================== -->
+      <section id="relatedProducts" class="section-pad">
+        <div class="container">
+          <div class="products-header fade-up">
+            <h2 class="products-title">Related Products</h2>
+            <div class="products-nav">
+              <a href="products.html" class="view-all-link">Get All</a>
+              <button class="products-arrow" data-prev aria-label="Previous" id="relatedPrev">
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <button class="products-arrow" data-next aria-label="Next" id="relatedNext">
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="row g-3" id="relatedSliderWrap" data-slider>
+            <!-- Related 1 -->
+            <div class="col-6 col-md-4 col-lg-3 product-card fade-up">
+              <a href="product-detail.html" class="product-card-link">
+                <div class="product-img-wrap">
+                  <img src="fashion/fas (17).jpg" alt="Women's Coat"
+                    style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
+                  <div class="product-quick-add">Quick View</div>
+                  <span class="product-tag new">New</span>
+                </div>
+                <p class="product-name">Women's Coat</p>
+                <p class="product-price">3,999,000 VND</p>
+              </a>
+            </div>
+            <!-- Related 2 -->
+            <div class="col-6 col-md-4 col-lg-3 product-card fade-up">
+              <a href="product-detail.html" class="product-card-link">
+                <div class="product-img-wrap">
+                  <img src="fashion/fas (25).jpg" alt="Slim Blazer"
+                    style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
+                  <div class="product-quick-add">Quick View</div>
+                </div>
+                <p class="product-name">Slim Blazer</p>
+                <p class="product-price">2,599,000 VND</p>
+              </a>
+            </div>
+            <!-- Related 3 -->
+            <div class="col-6 col-md-4 col-lg-3 product-card fade-up">
+              <a href="product-detail.html" class="product-card-link">
+                <div class="product-img-wrap">
+                  <img src="fashion/fas (56).jpg" alt="Fitted Turtleneck"
+                    style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
+                  <div class="product-quick-add">Quick View</div>
+                  <span class="product-tag sale">Sale</span>
+                </div>
+                <p class="product-name">Fitted Turtleneck</p>
+                <p class="product-price">
+                  1,299,000 VND
+                  <span class="old-price">1,800,000 VND</span>
+                </p>
+              </a>
+            </div>
+            <!-- Related 4 -->
+            <div class="col-6 col-md-4 col-lg-3 product-card fade-up">
+              <a href="product-detail.html" class="product-card-link">
+                <div class="product-img-wrap">
+                  <img src="fashion/fas (27).jpg" alt="Oversized Puffer"
+                    style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
+                  <div class="product-quick-add">Quick View</div>
+                </div>
+                <p class="product-name">Oversized Puffer</p>
+                <p class="product-price">2,799,000 VND</p>
+              </a>
+            </div>
+          </div><!-- /.row -->
+        </div>
+      </section>
+
+      <!-- ==========================================
+           DEALS OF THE MONTH (mini)
+           ========================================== -->
+      <section id="deals" class="section-pad" style="background: var(--color-off-white);">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <!-- Text + Countdown -->
+            <div class="col-lg-5 fade-up">
+              <div class="deals-text">
+                <h2>Deals Of<br />The Month</h2>
+                <p>
+                  Don't miss our exclusive monthly deals — curated selections from
+                  the world's leading fashion houses at unbeatable prices. Limited
+                  time, limited stock.
+                </p>
+                <div class="mt-4">
+                  <a href="products.html" class="btn-dark-custom">Shop Now</a>
+                </div>
+                <!-- Countdown -->
+                <div class="countdown-wrap">
+                  <p class="countdown-label">Hurry, Before It's Too Late!</p>
+                  <div class="countdown">
+                    <div class="countdown-unit">
+                      <span class="countdown-num" id="cd-days">02</span>
+                      <span class="countdown-text">Days</span>
+                    </div>
+                    <span class="countdown-sep">:</span>
+                    <div class="countdown-unit">
+                      <span class="countdown-num" id="cd-hours">06</span>
+                      <span class="countdown-text">Hours</span>
+                    </div>
+                    <span class="countdown-sep">:</span>
+                    <div class="countdown-unit">
+                      <span class="countdown-num" id="cd-mins">05</span>
+                      <span class="countdown-text">Mins</span>
+                    </div>
+                    <span class="countdown-sep">:</span>
+                    <div class="countdown-unit">
+                      <span class="countdown-num" id="cd-secs">30</span>
+                      <span class="countdown-text">Secs</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Deals Slider -->
+            <div class="col-lg-7 fade-up">
+              <div class="deals-slider" id="dealsSlider">
+                <div class="deals-slide active">
+                  <img src="fashion/fas (3).jpg" alt="Deals 1" />
+                  <div class="deals-cta-overlay">
+                    <a href="products.html" class="btn-white-custom deals-cta-btn">Shop Casual Luxe</a>
+                  </div>
+                </div>
+                <div class="deals-slide">
+                  <img src="fashion/fas (28).jpg" alt="Deals 2" />
+                  <div class="deals-badge"><span>50%</span>OFF</div>
+                  <div class="deals-cta-overlay">
+                    <a href="products.html" class="btn-white-custom deals-cta-btn">Discover Offers</a>
+                  </div>
+                </div>
+                <div class="deals-slide">
+                  <img src="fashion/fas (45).jpg" alt="Deals 3" />
+                  <div class="deals-cta-overlay">
+                    <a href="products.html" class="btn-white-custom deals-cta-btn">Explore Collection</a>
+                  </div>
+                </div>
+                <div class="deals-slide">
+                  <img src="fashion/fas (56).jpg" alt="Deals 4" />
+                  <div class="deals-cta-overlay">
+                    <a href="products.html" class="btn-white-custom deals-cta-btn">Get The Look</a>
+                  </div>
+                </div>
+                <button type="button" class="deals-arrow deals-prev" aria-label="Previous Deal">
+                  <i class="bi bi-chevron-left"></i>
+                </button>
+                <button type="button" class="deals-arrow deals-next" aria-label="Next Deal">
+                  <i class="bi bi-chevron-right"></i>
+                </button>
+              </div>
+              <div class="carousel-dots mt-3" id="dealsDots">
+                <div class="carousel-dot active"></div>
+                <div class="carousel-dot"></div>
+                <div class="carousel-dot"></div>
+                <div class="carousel-dot"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- ==========================================
+           FOOTER
+           ========================================== -->
+      <footer id="footer">
+        <div class="footer-top">
+          <div class="container">
+            <div class="footer-grid">
+              <!-- Col 1: Brand -->
+              <div class="footer-brand-col">
+                <span class="footer-logo">Flevie</span>
+                <p class="footer-tagline">Premium fashion for the modern individual. Curated collections from the
+                  world's leading houses.</p>
+                <div class="footer-socials">
+                  <a href="#" class="footer-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="#" class="footer-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="#" class="footer-social-btn" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+                  <a href="#" class="footer-social-btn" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                </div>
+              </div>
+
+              <!-- Col 2: Shop -->
+              <div class="footer-col">
+                <h4 class="footer-col-heading">Shop</h4>
+                <ul class="footer-links">
+                  <li><a href="products.html">New Arrivals</a></li>
+                  <li><a href="products.html">For Women</a></li>
+                  <li><a href="products.html">For Men</a></li>
+                  <li><a href="index.html#deals">Sale</a></li>
+                  <li><a href="index.html#featured">Calibre</a></li>
+                </ul>
+              </div>
+
+              <!-- Col 3: Company -->
+              <div class="footer-col">
+                <h4 class="footer-col-heading">Company</h4>
+                <ul class="footer-links">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Careers</a></li>
+                  <li><a href="#">Press</a></li>
+                  <li><a href="#">Sustainability</a></li>
+                  <li><a href="#">Affiliate Program</a></li>
+                </ul>
+              </div>
+
+              <!-- Col 4: Help -->
+              <div class="footer-col">
+                <h4 class="footer-col-heading">Help</h4>
+                <ul class="footer-links">
+                  <li><a href="#">Shipping &amp; Returns</a></li>
+                  <li><a href="#">Size Guide</a></li>
+                  <li><a href="#">Track My Order</a></li>
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                </ul>
+                <div class="footer-contact">
+                  <p><i class="bi bi-envelope"></i> hello@flevie.com</p>
+                  <p><i class="bi bi-telephone"></i> +84 28 3456 7890</p>
+                </div>
+              </div>
+            </div><!-- /.footer-grid -->
+          </div>
+        </div><!-- /.footer-top -->
+
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="footer-bottom-inner">
+              <p class="footer-copy">&copy; 2026 Flevie. All rights reserved.</p>
+              <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Cookie Settings</a>
+              </div>
+              <div class="footer-payments">
+                <i class="bi bi-credit-card-2-front" title="Visa"></i>
+                <i class="bi bi-paypal" title="PayPal"></i>
+                <i class="bi bi-apple" title="Apple Pay"></i>
+              </div>
+            </div>
+          </div>
+        </div><!-- /.footer-bottom -->
+      </footer>
+
+    </div><!-- /#smooth-content -->
+  </div><!-- /#smooth-wrapper -->
+
+  <!-- ── Scroll to Top ── -->
+  <button id="scrollTop" aria-label="Scroll to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- ── Add to Cart Toast ── -->
+  <div class="pd-toast" id="pdToast">
+    <i class="bi bi-bag-check-fill"></i>
+    <span>Added to cart!</span>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- GSAP Core & Plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollSmoother.min.js"></script>
+
+  <!-- Custom Scripts -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
