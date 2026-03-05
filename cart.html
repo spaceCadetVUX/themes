@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Flevie — Your Shopping Cart. Review your selected items and proceed to checkout." />
+  <title>Flevie — Shopping Cart</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+    rel="stylesheet" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+
+      <!-- ==========================================
+           NAVBAR
+           ========================================== -->
+      <nav id="mainNav" class="navbar navbar-expand-lg">
+        <div class="container">
+          <!-- Logo -->
+          <a class="navbar-brand nav-logo" href="index.html">Flevie</a>
+
+          <!-- Mobile toggler -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse"
+            aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Nav links + icons -->
+          <div class="collapse navbar-collapse" id="navCollapse">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item custom-dropdown-link">
+                <a class="nav-link" href="products.html">Shop <i class="bi bi-chevron-down ms-1 nav-dropdown-icon"></i></a>
+                <ul class="custom-dropdown-menu">
+                  <li><a href="products.html">All Products</a></li>
+                  <li><a href="products.html">Women's Collection</a></li>
+                  <li><a href="products.html">Men's Collection</a></li>
+                  <li><a href="index.html#deals">Deals of the Month</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#featured">About</a>
+              </li>
+              <li class="nav-item custom-dropdown-link">
+                <a class="nav-link" href="#">Pages <i class="bi bi-chevron-down ms-1 nav-dropdown-icon"></i></a>
+                <ul class="custom-dropdown-menu">
+                  <li><a href="products.html">Shop Dashboard</a></li>
+                  <li><a href="index.html#featured">Brands</a></li>
+                  <li><a href="index.html#products">Portfolio</a></li>
+                </ul>
+              </li>
+            </ul>
+
+            <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+              <button type="button" class="nav-icon-btn" aria-label="Search"><i class="bi bi-search"></i></button>
+              <button type="button" class="nav-icon-btn" aria-label="User"><i class="bi bi-person"></i></button>
+              <button type="button" class="nav-icon-btn" aria-label="Favorites"><i class="bi bi-heart"></i></button>
+              <a href="cart.html" class="nav-icon-btn position-relative" aria-label="Cart">
+                <i class="bi bi-bag"></i>
+                <span class="cart-nav-badge" id="cartNavBadge">3</span>
+              </a>
+              <button class="nav-signup-btn ms-2">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- ==========================================
+           BREADCRUMB
+           ========================================== -->
+      <div class="pd-breadcrumb">
+        <div class="container">
+          <nav aria-label="breadcrumb">
+            <ol class="pd-breadcrumb-list">
+              <li><a href="index.html">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i></li>
+              <li class="active">Shopping Cart</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           CART SECTION
+           ========================================== -->
+      <section id="cartSection" class="section-pad">
+        <div class="container">
+
+          <!-- Page heading -->
+          <div class="cart-page-header fade-up">
+            <h1 class="cart-page-title">Shopping Cart</h1>
+            <p class="cart-page-subtitle"><span id="cartCount">3</span> items in your bag</p>
+          </div>
+
+          <div class="row g-5 g-lg-6 fade-up" id="cartMain">
+
+            <!-- ── LEFT: Cart Items ── -->
+            <div class="col-lg-8">
+
+              <!-- Cart Table Header (desktop) -->
+              <div class="cart-table-head d-none d-md-grid">
+                <span></span><!-- image col -->
+                <span>Product</span>
+                <span>Price</span>
+                <span>Quantity</span>
+                <span>Total</span>
+                <span></span><!-- remove col -->
+              </div>
+
+              <!-- ── Cart Item 1 ── -->
+              <div class="cart-item" data-item-id="1">
+                <div class="cart-item-img-wrap">
+                  <a href="product-detail.html">
+                    <img src="fashion/fas (56).jpg" alt="Leather Jacket" />
+                  </a>
+                  <span class="cart-item-tag sale">–20%</span>
+                </div>
+                <div class="cart-item-info">
+                  <span class="cart-item-brand">Calibre</span>
+                  <a href="product-detail.html" class="cart-item-name">Leather Jacket</a>
+                  <div class="cart-item-meta">
+                    <span>Size: <strong>M</strong></span>
+                    <span class="cart-meta-sep">·</span>
+                    <span>Color: <strong>Black</strong></span>
+                  </div>
+                </div>
+                <div class="cart-item-price">
+                  <span class="cart-price-current">5,200,000 VND</span>
+                  <span class="cart-price-old">6,500,000 VND</span>
+                </div>
+                <div class="cart-item-qty">
+                  <div class="pd-qty-wrap">
+                    <button class="pd-qty-btn cart-qty-btn" data-action="minus" aria-label="Decrease quantity">
+                      <i class="bi bi-dash"></i>
+                    </button>
+                    <input type="number" class="pd-qty-input cart-qty-input" value="1" min="1" max="99"
+                      aria-label="Quantity" readonly />
+                    <button class="pd-qty-btn cart-qty-btn" data-action="plus" aria-label="Increase quantity">
+                      <i class="bi bi-plus"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="cart-item-total">
+                  <span class="cart-item-total-price" data-unit="5200000" data-qty="1">5,200,000 VND</span>
+                </div>
+                <button class="cart-item-remove" aria-label="Remove item">
+                  <i class="bi bi-x-lg"></i>
+                </button>
+              </div>
+
+              <!-- ── Cart Item 2 ── -->
+              <div class="cart-item" data-item-id="2">
+                <div class="cart-item-img-wrap">
+                  <a href="product-detail.html">
+                    <img src="fashion/fas (17).jpg" alt="Women's Coat" />
+                  </a>
+                  <span class="cart-item-tag new">New</span>
+                </div>
+                <div class="cart-item-info">
+                  <span class="cart-item-brand">Calibre</span>
+                  <a href="product-detail.html" class="cart-item-name">Women's Coat</a>
+                  <div class="cart-item-meta">
+                    <span>Size: <strong>S</strong></span>
+                    <span class="cart-meta-sep">·</span>
+                    <span>Color: <strong>Camel</strong></span>
+                  </div>
+                </div>
+                <div class="cart-item-price">
+                  <span class="cart-price-current">3,999,000 VND</span>
+                </div>
+                <div class="cart-item-qty">
+                  <div class="pd-qty-wrap">
+                    <button class="pd-qty-btn cart-qty-btn" data-action="minus" aria-label="Decrease quantity">
+                      <i class="bi bi-dash"></i>
+                    </button>
+                    <input type="number" class="pd-qty-input cart-qty-input" value="1" min="1" max="99"
+                      aria-label="Quantity" readonly />
+                    <button class="pd-qty-btn cart-qty-btn" data-action="plus" aria-label="Increase quantity">
+                      <i class="bi bi-plus"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="cart-item-total">
+                  <span class="cart-item-total-price" data-unit="3999000" data-qty="1">3,999,000 VND</span>
+                </div>
+                <button class="cart-item-remove" aria-label="Remove item">
+                  <i class="bi bi-x-lg"></i>
+                </button>
+              </div>
+
+              <!-- ── Cart Item 3 ── -->
+              <div class="cart-item" data-item-id="3">
+                <div class="cart-item-img-wrap">
+                  <a href="product-detail.html">
+                    <img src="fashion/fas (25).jpg" alt="Slim Blazer" />
+                  </a>
+                </div>
+                <div class="cart-item-info">
+                  <span class="cart-item-brand">Calibre</span>
+                  <a href="product-detail.html" class="cart-item-name">Slim Blazer</a>
+                  <div class="cart-item-meta">
+                    <span>Size: <strong>L</strong></span>
+                    <span class="cart-meta-sep">·</span>
+                    <span>Color: <strong>Charcoal</strong></span>
+                  </div>
+                </div>
+                <div class="cart-item-price">
+                  <span class="cart-price-current">2,599,000 VND</span>
+                </div>
+                <div class="cart-item-qty">
+                  <div class="pd-qty-wrap">
+                    <button class="pd-qty-btn cart-qty-btn" data-action="minus" aria-label="Decrease quantity">
+                      <i class="bi bi-dash"></i>
+                    </button>
+                    <input type="number" class="pd-qty-input cart-qty-input" value="2" min="1" max="99"
+                      aria-label="Quantity" readonly />
+                    <button class="pd-qty-btn cart-qty-btn" data-action="plus" aria-label="Increase quantity">
+                      <i class="bi bi-plus"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="cart-item-total">
+                  <span class="cart-item-total-price" data-unit="2599000" data-qty="2">5,198,000 VND</span>
+                </div>
+                <button class="cart-item-remove" aria-label="Remove item">
+                  <i class="bi bi-x-lg"></i>
+                </button>
+              </div>
+
+              <!-- ── Continue Shopping + Clear Cart ── -->
+              <div class="cart-actions">
+                <a href="products.html" class="btn-outline-custom">
+                  <i class="bi bi-arrow-left me-2"></i>Continue Shopping
+                </a>
+                <button class="cart-clear-btn" id="cartClearBtn">
+                  <i class="bi bi-trash3 me-1"></i>Clear Cart
+                </button>
+              </div>
+
+              <!-- ── Coupon Code ── -->
+              <div class="cart-coupon-wrap">
+                <div class="cart-coupon-label">
+                  <i class="bi bi-tag"></i> Have a coupon code?
+                </div>
+                <div class="cart-coupon-row">
+                  <input type="text" class="cart-coupon-input" id="couponInput" placeholder="Enter coupon code…"
+                    aria-label="Coupon code" />
+                  <button class="btn-dark-custom cart-coupon-btn" id="couponApplyBtn">Apply</button>
+                </div>
+                <p class="cart-coupon-msg" id="couponMsg"></p>
+              </div>
+
+            </div><!-- /.col-lg-8 -->
+
+            <!-- ── RIGHT: Order Summary ── -->
+            <div class="col-lg-4">
+              <div class="cart-summary-card fade-up">
+                <h3 class="cart-summary-title">Order Summary</h3>
+
+                <div class="cart-summary-rows">
+                  <div class="cart-summary-row">
+                    <span>Subtotal (<span id="summaryCount">3</span> items)</span>
+                    <span id="summarySubtotal">14,397,000 VND</span>
+                  </div>
+                  <div class="cart-summary-row">
+                    <span>Discount</span>
+                    <span class="cart-discount-val" id="summaryDiscount">–1,300,000 VND</span>
+                  </div>
+                  <div class="cart-summary-row" id="couponRow" style="display:none;">
+                    <span>Coupon (<span id="couponCodeTag">FLEVIE10</span>)</span>
+                    <span class="cart-discount-val" id="summaryCoupon">–0 VND</span>
+                  </div>
+                  <div class="cart-summary-row">
+                    <span>Shipping</span>
+                    <span class="cart-free-shipping" id="summaryShipping">Free</span>
+                  </div>
+                  <div class="cart-summary-divider"></div>
+                  <div class="cart-summary-row cart-summary-total-row">
+                    <span>Total</span>
+                    <span id="summaryTotal">13,097,000 VND</span>
+                  </div>
+                </div>
+
+                <!-- Free shipping progress -->
+                <div class="cart-shipping-bar">
+                  <div class="cart-shipping-bar-top">
+                    <span class="cart-shipping-bar-label">
+                      <i class="bi bi-truck"></i>
+                      <span id="shippingBarMsg">You've unlocked <strong>free shipping!</strong></span>
+                    </span>
+                  </div>
+                  <div class="cart-shipping-progress">
+                    <div class="cart-shipping-fill" id="shippingFill" style="width:100%"></div>
+                  </div>
+                </div>
+
+                <!-- Checkout CTA -->
+                <button class="btn-dark-custom cart-checkout-btn" id="checkoutBtn">
+                  <i class="bi bi-lock-fill me-2"></i>Proceed to Checkout
+                </button>
+
+                <div class="cart-or-divider"><span>or</span></div>
+
+                <!-- Payment quick options -->
+                <div class="cart-payment-methods">
+                  <button class="cart-pay-btn">
+                    <i class="bi bi-paypal me-1"></i> PayPal
+                  </button>
+                  <button class="cart-pay-btn">
+                    <i class="bi bi-apple me-1"></i> Apple Pay
+                  </button>
+                </div>
+
+                <!-- Trust badges -->
+                <div class="cart-trust">
+                  <div class="cart-trust-item">
+                    <i class="bi bi-shield-check"></i>
+                    <span>Secure Checkout</span>
+                  </div>
+                  <div class="cart-trust-item">
+                    <i class="bi bi-arrow-repeat"></i>
+                    <span>Free Returns</span>
+                  </div>
+                  <div class="cart-trust-item">
+                    <i class="bi bi-credit-card"></i>
+                    <span>Encrypted Payment</span>
+                  </div>
+                </div>
+
+                <!-- Payment icons -->
+                <div class="pd-payments mt-3">
+                  <span class="pd-payments-label">We Accept:</span>
+                  <i class="bi bi-credit-card-2-front" title="Visa"></i>
+                  <i class="bi bi-paypal" title="PayPal"></i>
+                  <i class="bi bi-apple" title="Apple Pay"></i>
+                  <i class="bi bi-google" title="Google Pay"></i>
+                </div>
+
+              </div>
+            </div><!-- /.col-lg-4 -->
+
+          </div><!-- /.row -->
+
+          <!-- ==========================================
+               EMPTY CART STATE (hidden by default)
+               ========================================== -->
+          <div class="cart-empty fade-up" id="cartEmpty" style="display:none;">
+            <div class="cart-empty-icon"><i class="bi bi-bag-x"></i></div>
+            <h2 class="cart-empty-title">Your Cart is Empty</h2>
+            <p class="cart-empty-subtitle">Looks like you haven't added anything yet. Explore our collections and find something you love.</p>
+            <a href="products.html" class="btn-dark-custom">Start Shopping</a>
+          </div>
+
+        </div><!-- /.container -->
+      </section>
+
+      <!-- ==========================================
+           YOU MAY ALSO LIKE
+           ========================================== -->
+      <section class="section-pad bg-off-white" id="cartRelated">
+        <div class="container">
+          <div class="products-header fade-up">
+            <h2 class="products-title">You May Also Like</h2>
+            <div class="products-nav">
+              <a href="products.html" class="view-all-link">View All</a>
+              <button class="products-arrow" data-prev aria-label="Previous" id="cartRelatedPrev">
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <button class="products-arrow" data-next aria-label="Next" id="cartRelatedNext">
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="row g-3 fade-up" id="cartRelatedSlider" data-slider>
+            <div class="col-6 col-md-4 col-lg-3 product-card">
+              <a href="product-detail.html" class="product-card-link">
+                <div class="product-img-wrap">
+                  <img src="fashion/fas (43).jpg" alt="Fitted Turtleneck"
+                    style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
+                  <div class="product-quick-add">Quick View</div>
+                  <span class="product-tag sale">Sale</span>
+                </div>
+                <p class="product-name">Fitted Turtleneck</p>
+                <p class="product-price">1,299,000 VND <span class="old-price">1,800,000 VND</span></p>
+              </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 product-card">
+              <a href="product-detail.html" class="product-card-link">
+                <div class="product-img-wrap">
+                  <img src="fashion/fas (27).jpg" alt="Oversized Puffer"
+                    style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
+                  <div class="product-quick-add">Quick View</div>
+                </div>
+                <p class="product-name">Oversized Puffer</p>
+                <p class="product-price">2,799,000 VND</p>
+              </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 product-card">
+              <a href="product-detail.html" class="product-card-link">
+                <div class="product-img-wrap">
+                  <img src="fashion/fas (58).jpg" alt="Relaxed Linen Shirt"
+                    style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
+                  <div class="product-quick-add">Quick View</div>
+                  <span class="product-tag new">New</span>
+                </div>
+                <p class="product-name">Relaxed Linen Shirt</p>
+                <p class="product-price">1,899,000 VND</p>
+              </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 product-card">
+              <a href="product-detail.html" class="product-card-link">
+                <div class="product-img-wrap">
+                  <img src="fashion/fas (59).jpg" alt="Cargo Wide-Leg"
+                    style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
+                  <div class="product-quick-add">Quick View</div>
+                </div>
+                <p class="product-name">Cargo Wide-Leg</p>
+                <p class="product-price">2,199,000 VND</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           FOOTER
+           ========================================== -->
+      <footer id="footer">
+        <div class="footer-top">
+          <div class="container">
+            <div class="footer-grid">
+              <!-- Col 1: Brand -->
+              <div class="footer-brand-col">
+                <span class="footer-logo">Flevie</span>
+                <p class="footer-tagline">Premium fashion for the modern individual. Curated collections from the
+                  world's leading houses.</p>
+                <div class="footer-socials">
+                  <a href="#" class="footer-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="#" class="footer-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="#" class="footer-social-btn" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+                  <a href="#" class="footer-social-btn" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                </div>
+              </div>
+
+              <!-- Col 2: Shop -->
+              <div class="footer-col">
+                <h4 class="footer-col-heading">Shop</h4>
+                <ul class="footer-links">
+                  <li><a href="products.html">New Arrivals</a></li>
+                  <li><a href="products.html">For Women</a></li>
+                  <li><a href="products.html">For Men</a></li>
+                  <li><a href="index.html#deals">Sale</a></li>
+                  <li><a href="index.html#featured">Calibre</a></li>
+                </ul>
+              </div>
+
+              <!-- Col 3: Company -->
+              <div class="footer-col">
+                <h4 class="footer-col-heading">Company</h4>
+                <ul class="footer-links">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Careers</a></li>
+                  <li><a href="#">Press</a></li>
+                  <li><a href="#">Sustainability</a></li>
+                  <li><a href="#">Affiliate Program</a></li>
+                </ul>
+              </div>
+
+              <!-- Col 4: Help -->
+              <div class="footer-col">
+                <h4 class="footer-col-heading">Help</h4>
+                <ul class="footer-links">
+                  <li><a href="#">Shipping &amp; Returns</a></li>
+                  <li><a href="#">Size Guide</a></li>
+                  <li><a href="#">Track My Order</a></li>
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                </ul>
+                <div class="footer-contact">
+                  <p><i class="bi bi-envelope"></i> hello@flevie.com</p>
+                  <p><i class="bi bi-telephone"></i> +84 28 3456 7890</p>
+                </div>
+              </div>
+            </div><!-- /.footer-grid -->
+          </div>
+        </div><!-- /.footer-top -->
+
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="footer-bottom-inner">
+              <p class="footer-copy">&copy; 2026 Flevie. All rights reserved.</p>
+              <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Cookie Settings</a>
+              </div>
+              <div class="footer-payments">
+                <i class="bi bi-credit-card-2-front" title="Visa"></i>
+                <i class="bi bi-paypal" title="PayPal"></i>
+                <i class="bi bi-apple" title="Apple Pay"></i>
+              </div>
+            </div>
+          </div>
+        </div><!-- /.footer-bottom -->
+      </footer>
+
+    </div><!-- /#smooth-content -->
+  </div><!-- /#smooth-wrapper -->
+
+  <!-- ── Scroll to Top ── -->
+  <button id="scrollTop" aria-label="Scroll to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- ── Remove Item Toast ── -->
+  <div class="pd-toast" id="cartToast">
+    <i class="bi bi-bag-dash-fill"></i>
+    <span>Item removed from cart!</span>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- GSAP Core & Plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollSmoother.min.js"></script>
+
+  <!-- Custom Scripts -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

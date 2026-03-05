@@ -164,10 +164,12 @@ function initNewsletter() {
 
 /* ── Deals Slider ────────────────────────────────────────── */
 function initDealsSlider() {
+  const slider = $("#dealsSlider");
+  if (!slider) return;
   const slides = $$(".deals-slide");
   const dots = $$("#dealsDots .carousel-dot");
-  const prevBtn = $(".deals-prev", $("#dealsSlider"));
-  const nextBtn = $(".deals-next", $("#dealsSlider"));
+  const prevBtn = $(".deals-prev", slider);
+  const nextBtn = $(".deals-next", slider);
   if (!slides.length) return;
 
   let current = 0, timer = null;
@@ -186,11 +188,8 @@ function initDealsSlider() {
   if (prevBtn) prevBtn.addEventListener("click", () => { goTo(current - 1); resetTimer(); });
   if (nextBtn) nextBtn.addEventListener("click", () => { goTo(current + 1); resetTimer(); });
 
-  const slider = $("#dealsSlider");
-  if (slider) {
-    slider.addEventListener("mouseenter", () => clearInterval(timer));
-    slider.addEventListener("mouseleave", startTimer);
-  }
+  slider.addEventListener("mouseenter", () => clearInterval(timer));
+  slider.addEventListener("mouseleave", startTimer);
   startTimer();
 }
 
@@ -417,6 +416,203 @@ function initAddToCart() {
   });
 }
 
+/* ── Cart Page ───────────────────────────────────────────── */
+function initCart() {
+  const cartMain  = document.getElementById('cartMain');
+  const cartEmpty = document.getElementById('cartEmpty');
+  if (!cartMain) return; // not the cart page
+
+  const cartCountEl      = document.getElementById('cartCount');
+  const summaryCountEl   = document.getElementById('summaryCount');
+  const summarySubtotalEl= document.getElementById('summarySubtotal');
+  const summaryDiscountEl= document.getElementById('summaryDiscount');
+  const summaryTotalEl   = document.getElementById('summaryTotal');
+  const couponRow        = document.getElementById('couponRow');
+  const summaryCouponEl  = document.getElementById('summaryCoupon');
+  const couponCodeTag    = document.getElementById('couponCodeTag');
+  const cartNavBadge     = document.getElementById('cartNavBadge');
+  const cartToast        = document.getElementById('cartToast');
+
+  // Valid coupon codes: code → discount %
+  const COUPONS = { 'FLEVIE10': 10, 'SAVE15': 15, 'WELCOME20': 20 };
+  let activeCouponDiscount = 0;
+  const FREE_SHIPPING_THRESHOLD = 2000000; // 2M VND
+
+  function formatVND(n) {
+    return n.toLocaleString('vi-VN') + ' VND';
+  }
+
+  /* -- Recalculate totals -- */
+  function recalc() {
+    const items = [...document.querySelectorAll('.cart-item')];
+    let subtotal = 0;
+    let originalTotal = 0;
+
+    items.forEach(item => {
+      const priceEl  = item.querySelector('.cart-item-total-price');
+      const qtyInput = item.querySelector('.cart-qty-input');
+      const unit     = parseInt(priceEl.dataset.unit, 10) || 0;
+      const qty      = parseInt(qtyInput.value, 10) || 1;
+      priceEl.dataset.qty = qty;
+      subtotal     += unit * qty;
+      // calc original from old price if shown
+      const oldPriceEl = item.querySelector('.cart-price-old');
+      if (oldPriceEl) {
+        const oldText = oldPriceEl.textContent.replace(/[^0-9]/g, '');
+        originalTotal += (parseInt(oldText, 10) || unit) * qty;
+      } else {
+        originalTotal += unit * qty;
+      }
+      // update item total display
+      priceEl.textContent = formatVND(unit * qty);
+    });
+
+    const itemCount = items.length;
+    const discount  = originalTotal - subtotal;
+    const couponAmt = Math.round(subtotal * activeCouponDiscount / 100);
+    const shipping  = subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : 50000;
+    const total     = subtotal - couponAmt + shipping;
+
+    if (cartCountEl)     cartCountEl.textContent  = itemCount;
+    if (summaryCountEl)  summaryCountEl.textContent = itemCount;
+    if (cartNavBadge)    cartNavBadge.textContent = itemCount;
+    if (summarySubtotalEl) summarySubtotalEl.textContent = formatVND(subtotal);
+    if (summaryDiscountEl && discount > 0) {
+      summaryDiscountEl.textContent = '–' + formatVND(discount);
+    } else if (summaryDiscountEl) {
+      summaryDiscountEl.textContent = '–0 VND';
+    }
+    if (summaryTotalEl) summaryTotalEl.textContent = formatVND(total);
+
+    // Shipping bar
+    const fillEl = document.getElementById('shippingFill');
+    const barMsg = document.getElementById('shippingBarMsg');
+    if (fillEl && barMsg) {
+      if (subtotal >= FREE_SHIPPING_THRESHOLD) {
+        fillEl.style.width = '100%';
+        barMsg.innerHTML = `You've unlocked <strong>free shipping!</strong>`;
+      } else {
+        const pct = Math.min(100, (subtotal / FREE_SHIPPING_THRESHOLD) * 100);
+        fillEl.style.width = pct + '%';
+        const remaining = formatVND(FREE_SHIPPING_THRESHOLD - subtotal);
+        barMsg.innerHTML = `Add <strong>${remaining}</strong> more for free shipping`;
+      }
+    }
+
+    // Coupon row
+    if (couponRow && summaryCouponEl) {
+      if (activeCouponDiscount > 0) {
+        couponRow.style.display = '';
+        summaryCouponEl.textContent = '–' + formatVND(couponAmt);
+      } else {
+        couponRow.style.display = 'none';
+      }
+    }
+
+    // Empty state toggle
+    if (itemCount === 0) {
+      cartMain.style.display = 'none';
+      if (cartEmpty) cartEmpty.style.display = '';
+      document.getElementById('cartRelated')?.style.setProperty('display', 'none');
+    }
+  }
+
+  /* -- Quantity steppers -- */
+  document.querySelectorAll('.cart-qty-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const wrap  = btn.closest('.pd-qty-wrap');
+      const input = wrap.querySelector('.cart-qty-input');
+      const priceEl = btn.closest('.cart-item').querySelector('.cart-item-total-price');
+      let val = parseInt(input.value, 10) || 1;
+      if (btn.dataset.action === 'plus')  val = Math.min(99, val + 1);
+      if (btn.dataset.action === 'minus') val = Math.max(1, val - 1);
+      input.value = val;
+      priceEl.dataset.qty = val;
+      recalc();
+    });
+  });
+
+  /* -- Remove item -- */
+  document.querySelectorAll('.cart-item-remove').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.cart-item');
+      item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+      item.style.opacity = '0';
+      item.style.transform = 'translateX(20px)';
+      setTimeout(() => {
+        item.remove();
+        recalc();
+        // Show toast
+        if (cartToast) {
+          cartToast.classList.add('show');
+          setTimeout(() => cartToast.classList.remove('show'), 2200);
+        }
+      }, 300);
+    });
+  });
+
+  /* -- Clear cart -- */
+  const clearBtn = document.getElementById('cartClearBtn');
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      document.querySelectorAll('.cart-item').forEach(item => {
+        item.style.transition = 'opacity 0.25s ease';
+        item.style.opacity = '0';
+        setTimeout(() => { item.remove(); recalc(); }, 280);
+      });
+    });
+  }
+
+  /* -- Coupon -- */
+  const couponInput    = document.getElementById('couponInput');
+  const couponApplyBtn = document.getElementById('couponApplyBtn');
+  const couponMsg      = document.getElementById('couponMsg');
+
+  if (couponApplyBtn && couponInput) {
+    couponApplyBtn.addEventListener('click', () => {
+      const code = couponInput.value.trim().toUpperCase();
+      if (!code) { return; }
+      if (COUPONS[code]) {
+        activeCouponDiscount = COUPONS[code];
+        if (couponCodeTag) couponCodeTag.textContent = code;
+        couponMsg.textContent = `✓ Coupon "${code}" applied — ${COUPONS[code]}% off!`;
+        couponMsg.className = 'cart-coupon-msg success';
+        couponInput.value = '';
+        couponApplyBtn.textContent = 'Applied ✓';
+        couponApplyBtn.style.background = 'var(--color-accent)';
+        setTimeout(() => {
+          couponApplyBtn.textContent = 'Apply';
+          couponApplyBtn.style.background = '';
+        }, 2000);
+      } else {
+        couponMsg.textContent = `✕ Invalid coupon code. Try FLEVIE10 or SAVE15.`;
+        couponMsg.className = 'cart-coupon-msg error';
+      }
+      recalc();
+    });
+
+    couponInput.addEventListener('keydown', e => {
+      if (e.key === 'Enter') couponApplyBtn.click();
+    });
+  }
+
+  /* -- Checkout CTA -- */
+  const checkoutBtn = document.getElementById('checkoutBtn');
+  if (checkoutBtn) {
+    checkoutBtn.addEventListener('click', () => {
+      checkoutBtn.innerHTML = '<i class="bi bi-check-lg me-2"></i>Processing…';
+      checkoutBtn.disabled = true;
+      setTimeout(() => {
+        checkoutBtn.innerHTML = '<i class="bi bi-lock-fill me-2"></i>Proceed to Checkout';
+        checkoutBtn.disabled = false;
+      }, 2000);
+    });
+  }
+
+  // Initial calculation
+  recalc();
+}
+
 /* ── Shop Page Filters ───────────────────────────────────── */
 function initShopFilters() {
   const clearBtn = $("#clearFiltersBtn");
@@ -464,6 +660,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();
   initMomentumScroll();
   initShopFilters();
+  initCart();
 
   // Product Detail page — safe to call on every page;
   // each function returns early if its elements don't exist.
